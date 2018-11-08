@@ -1383,7 +1383,6 @@ let selected_state;
 
 document.getElementsByClassName('moveBlock_range')[0].addEventListener('input', function(){
 	for(let i = 0; i < my_states_arr.length; i++){
-		console.log('change');
 		if(my_states_arr[i].state == selected_state_movefrom){
 			document.getElementById('moveBlock_text').innerHTML = document.getElementsByClassName('moveBlock_range')[0].value+'Т';		
 		}
@@ -2206,7 +2205,7 @@ socket.on('server-list', function(data){
 		for(var i = 0; i < games.length; i++){
 			if(games[i].closed == false){
 				if(data.games[i].players == 1){
-					html = html +  `<div class="block">
+					html = html +  `<div class="col-md-4 block">
 										<div class="block-header clearfix">
 											`+data.games[i].creator.first_name+` `+data.games[i].creator.last_name+`
 											<div class="block-button float-right" onclick="serverlist_connect(`+i+`);"><i class="fas fa-play"></i></div>
@@ -2219,7 +2218,7 @@ socket.on('server-list', function(data){
 										</div>
 									</div>`;
 				} else {
-					html = html +  `<div class="block">
+					html = html +  `<div class="col-md-4 block">
 										<div class="block-header clearfix">
 											`+data.games[i].creator.first_name+` `+data.games[i].creator.last_name+`
 										</div>
@@ -2233,7 +2232,7 @@ socket.on('server-list', function(data){
 				}
 			} else {
 				if(data.games[i].players == 1){
-					html = html +  `<div class="block">
+					html = html +  `<div class="col-md-4 block">
 										<div class="block-header clearfix">
 											`+data.games[i].creator.first_name+` `+data.games[i].creator.last_name+`
 											<div class="block-button float-right" onclick="serverlist_connect_closed(`+i+`);"><i class="fas fa-play"></i></div>
@@ -2246,7 +2245,7 @@ socket.on('server-list', function(data){
 										</div>
 									</div>`;
 				} else {
-					html = html +  `<div class="block">
+					html = html +  `<div class="col-md-4 block">
 										<div class="block-header clearfix">
 											`+data.games[i].creator.first_name+` `+data.games[i].creator.last_name+`
 										</div>
