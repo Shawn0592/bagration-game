@@ -474,7 +474,7 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 .top-panel .info {
-	width: 91.61px;
+	width: 92px;
 	height: 42px;
 	font-size: 13px;
 	display: inline;
@@ -1199,21 +1199,22 @@ input[type=range]::-webkit-slider-thumb {
 	margin-top: -55px;
 	margin-left: 10%;
 	margin-right: 10%;
-	padding: 20px;
-	height: calc(100% - 95px);
+	padding: 0.4em;
 
+	max-height: calc(100% - 95px);
 	overflow-y: auto;
 
-	display: grid;
+/*	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	grid-auto-rows: 170px;
-	grid-gap: 10px;
+	grid-gap: 10px;*/
+
 }
 
 #serverlist-block .body .block {
 	border-radius: 5px;
 	background-color: #fff;
-	height: 100px;
+	padding: 0.4em;
 	color: #fff;
 }
 
