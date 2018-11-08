@@ -1133,7 +1133,7 @@ input[type=range]::-webkit-slider-thumb {
 	text-align: center;
 	width: 100%;
 	padding-left: 17%;
-	background-color: #f1f1f1;
+	background-color: #111;
 }
 
 #startgame .spec .block, #startgame .spec .block-active {
@@ -1145,18 +1145,18 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 #startgame .spec .block:hover {
-	background-color: #ccc;
+	background-color: #333;
 	color: black;
 	cursor: pointer;
 }
 
 #startgame .spec .block-active {
-	background-color: #777;
+	background-color: #222;
 	color: #fff;
 }
 
 #startgame .spec .block-active:hover {
-	background-color: #555;
+	background-color: #333;
 	cursor: pointer;
 }
 
@@ -1171,21 +1171,21 @@ input[type=range]::-webkit-slider-thumb {
 	box-shadow: 0 1px 0 0 #d7d8db, 0 0 0 1px #e3e4e8;
 }
 
-#serverlist {
+#serverlist, #startgame {
 	width: 1000px;
 	height: 580px;
 	background-image: url('img/2b.jpg');
 	display: none;
 }
 
-#serverlist #serverlist-block {
+#serverlist #serverlist-block, #startgame #startgame-block {
 	width: 1000px;
 	height: 580px;
 	background-color: rgba(34,34,34,.96);
 	color: #000;
 }
 
-#serverlist-block .header {
+#serverlist-block .header, #startgame-block .header {
 	background-color: #222;
 	color: #fff;
 	padding: 50px;
@@ -1194,7 +1194,7 @@ input[type=range]::-webkit-slider-thumb {
 	padding-bottom: 60px;
 }
 
-#serverlist-block .body {
+#serverlist-block .body, #startgame-block .body {
 	background-color: #fff;
 	margin-top: -55px;
 	margin-left: 10%;
@@ -1445,6 +1445,19 @@ circle:hover {
 .popup .container .buttons .button2:hover {
 	background-color: rgba(40,167,69,.8);
 	cursor: pointer;
+}
+
+
+.btn-verydark {
+    color: #fff;
+    background-color: #333;
+    border-color: #111;
+}
+
+.btn-verydark:hover {
+    color: #fff;
+    background-color: #222;
+    border-color: #333;
 }
 
 #line-2 {
