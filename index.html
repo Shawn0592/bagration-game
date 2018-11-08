@@ -6,15 +6,15 @@
 	<!-- Библиотека bootstrap -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-	<!-- Подключение стилей на страницу -->
-	<link rel="stylesheet" type="text/css" href="assets/style.css">
-
 	<!-- Шрифт -->
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,600,700%7COpen+Sans:300,400,400italic,600,700">
     <link rel="stylesheet" href="https://code.cdn.mozilla.net/fonts/fira.css">
 
 	<!-- Иконки -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+
+	<!-- Подключение стилей на страницу -->
+	<link rel="stylesheet" type="text/css" href="assets/style.css">
 </head>
 <body>
 	<audio src="assets/music/click.mp3"></audio>
@@ -514,27 +514,37 @@
 	</div>
 
 	<div id="startgame">
-		<div class="p-5 row">
-			<div class="col-md-6 py-4">
-				<b style="font-size: 26px;">СОЗДАТЬ СЕРВЕР</b>
-				<p style="font-size: 12px;">Выбор сложности игры - основной этап создания сервера. Если выбрать лёгкую сложность игры - игра пройдёт быстрее и легче, не будет различных событий, страны будут находиться на одном уровне развитий, останется только воевать. При выборе больших уровней сложности игрокам придётся самим расставлять дивизии, строить фабрики, покупать ресурсы у других стран.</p>
-				<div class="spec text-center my-4">
-					<div class="block-active"><img src="assets/img/classes/tank.png" width="30" height="30"></div>
-					<div class="block"><img src="assets/img/classes/plane.png" width="30" height="30"></div>
-					<div class="block"><img src="assets/img/classes/ship.png" width="30" height="30"></div>
-					<div class="block"><img src="assets/img/classes/bomb.png" width="30" height="30"></div>
-					<div class="block"><img src="assets/img/classes/bullet.png" width="30" height="30"></div>
-				</div><br><br>
-				<div class="text-center" style="width:100%;">
-					<b>Лёгкая сложность</b><br>
-					<p>У обоих странах в начале игры построены фабрики и расставлены дивизии.</p>
-					<div id="createserverbutton">
-						<button class="btn btn-success" onclick="createserver();">Создать сервер</button>
-					</div>
+		<div id="startgame-block">
+			<div class="header text-center clearfix">
+				<button class="btn btn-sm btn-outline-light float-left" style="font-size:10px;padding:3px 5px;margin-top:-3px;" onclick="to_menu();"><b>Назад</b></button>
+				Создать сервер
+				<div class="float-right">
+					 <div class="btn btn-sm btn-outline-light float-left" style="font-size:10px;padding:3px 5px;margin-top:-3px;"><b><label id="server-list_count"></label> онлайн</b></div>
 				</div>
 			</div>
-			<div class="col-md-6">
-				<img src="assets/img/factory.png" width="400" height="250" style="position: absolute;left:50%;top:50%;transform: translate(-50%,-50%);">
+			<div class="body row">
+				<div class="p-3 row">
+					<div class="col-md-6 py-2">
+						<p style="font-size: 12px;">Выбор сложности игры - основной этап создания сервера. Если выбрать лёгкую сложность игры - игра пройдёт быстрее и легче, не будет различных событий, страны будут находиться на одном уровне развитий, останется только воевать. При выборе больших уровней сложности игрокам придётся самим расставлять дивизии, строить фабрики, покупать ресурсы у других стран.</p>
+						<div class="spec text-center my-4">
+							<div class="block-active"><img src="assets/img/classes/tank.png" width="30" height="30"></div>
+							<div class="block"><img src="assets/img/classes/plane.png" width="30" height="30"></div>
+							<div class="block"><img src="assets/img/classes/ship.png" width="30" height="30"></div>
+							<div class="block"><img src="assets/img/classes/bomb.png" width="30" height="30"></div>
+							<div class="block"><img src="assets/img/classes/bullet.png" width="30" height="30"></div>
+						</div><br><br>
+						<div class="text-center" style="width:100%;">
+							<b>Лёгкая сложность</b><br>
+							<p>У обоих странах в начале игры построены фабрики и расставлены дивизии.</p>
+							<div id="createserverbutton">
+								<button class="btn btn-verydark" onclick="createserver();">Создать сервер</button>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<img src="assets/img/factory.png" width="400" height="250" style="position: absolute;left:50%;top:50%;transform: translate(-50%,-50%);">
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
