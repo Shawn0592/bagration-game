@@ -1,5 +1,5 @@
 let socket = io.connect('https://ancientwarserver.herokuapp.com/',{'forceNew':false});
-// let socket = io.connect();
+//let socket = io.connect();
 let player1, player2, this_player, game_key, player, player_country;
 let my_states_arr = [], enemy_states_arr = [];
 let move = false;
@@ -1337,6 +1337,15 @@ socket.on('game', function(data){
 	}
 });
 
+socket.on('anticheat', function(data){
+	if(data.command == 'AC001'){
+		if(game_key == data.key){
+			$('body').css('display','none');
+			alert('Сервер заблокировал администратор '+data.ban_by+'. Игра остановлена.');
+		}
+	}
+});
+
 socket.on('chat', function(data){
 	if(data.command == 'SC001'){
 		if(game_key == data.key){
@@ -1984,97 +1993,26 @@ function changeColor(type){
 }
 
 //changeColor('notype');
+function say_about_cheats(){
+	// if(money > antiCheatSystem_lastMoney+58){
+	// 	socket.emit('anticheat', {
+	// 		command: 'CA001',
+	// 		user: player_params,
+	// 		key: game_key,
+	// 		type: 1,
+	// 		last_money: antiCheatSystem_lastMoney,
+	// 		money: money
+	// 	});
+	// }
 
-// let up = false,
-// 	right = false,
-// 	down = false,
-// 	left = false,
-// 	x = window.innerWidth/2-20,
-// 	y = window.innerHeight/2-210;
+	socket.emit('anticheat', {
+		command: 'CA002',
+		user: player_params,
+		key: game_key
+	});
 
-// document.addEventListener('keydown',press)
-// function press(e){
-// 	if (e.keyCode === 38 /* up */ || e.keyCode === 87 /* w */ || e.keyCode === 90 /* z */){
-// 		down = true;
-// 	}
-// 	if (e.keyCode === 39 /* right */ || e.keyCode === 68 /* d */){
-// 		left = true;
-// 	}
-// 	if (e.keyCode === 40 /* down */ || e.keyCode === 83 /* s */){
-// 		up = true;
-// 	}
-// 	if (e.keyCode === 37 /* left */ || e.keyCode === 65 /* a */ || e.keyCode === 81 /* q */){
-// 		right = true;
-// 	}
-// }
-
-// document.addEventListener('keyup',release)
-// function release(e){
-// 	if (e.keyCode === 38 /* up */ || e.keyCode === 87 /* w */ || e.keyCode === 90 /* z */){
-// 		down = false;
-// 	}
-// 	if (e.keyCode === 39 /* right */ || e.keyCode === 68 /* d */){
-// 		left = false;
-// 	}
-// 	if (e.keyCode === 40 /* down */ || e.keyCode === 83 /* s */){
-// 		up = false;
-// 	}
-// 	if (e.keyCode === 37 /* left */ || e.keyCode === 65 /* a */ || e.keyCode === 81 /* q */){
-// 		right = false;
-// 	}
-// }
-
-// function gameLoop(){
-// 	var div = document.getElementById('map');
-// 	if (up){
-// 		y = y - 10;
-// 	}
-// 	if (right){
-// 		x = x + 10;
-// 	}
-// 	if (down){
-// 		y = y + 10;
-// 	}
-// 	if (left){
-// 		x = x - 10;
-// 	}
-
-// 	div.style.left = x+'px'
-// 	div.style.top = y+'px'
-// 	window.requestAnimationFrame(gameLoop);
-// }
-// window.requestAnimationFrame(gameLoop);
-
-// var antiCheatSystem_lastMoney = money;
-// var antiCheatSystem_lastPointers = pointers;
-// var antiCheatSystem_lastBalanceUpdate = 5;
-// function antiCheatSystem(){
-// 	if(money > antiCheatSystem_lastMoney+58){
-// 		socket.emit('anticheat', {
-// 			command: 'CA001',
-// 			user: player_params,
-// 			key: game_key,
-// 			type: 1,
-// 			last_money: antiCheatSystem_lastMoney,
-// 			money: money
-// 		});
-// 	}
-
-// 	if(pointers > antiCheatSystem_lastPointers+50){
-// 		socket.emit('anticheat', {
-// 			command: 'CA001',
-// 			user: player_params,
-// 			key: game_key,
-// 			type: 2,
-// 			last_pointers: antiCheatSystem_lastPointers,
-// 			pointers: pointers
-// 		});
-// 	}
-
-// 	antiCheatSystem_lastMoney = money;
-// 	antiCheatSystem_lastPointers = pointers;
-// }
-// setInterval(antiCheatSystem, 3000);
+	alert('Ваша жалоба на игрока успешна отправлена');
+}
 
 function windows_open(w){
 	if(w == 1){
@@ -2134,6 +2072,7 @@ function randomInteger(min, max) {
 
 function createserver(){
 	document.getElementById('createserverbutton').innerHTML = '<b class="text-primary" style="font-size:26px;">Ожидание игрока</b>';
+	$('#startgame_tomenu').css('display','none');
 
 	socket.emit('data', {
 		command: 'CD004'
