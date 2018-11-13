@@ -186,7 +186,7 @@ i:hover {
 	background-color: #111;
 }
 
-#state_name {
+#state_name, #spec_states1, #spec_states2 {
 	font-size: 10px;
 }
 
@@ -462,8 +462,6 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 .top-panel div {
-	margin: 0;
-	padding: 0;
 	display: inline-flex;
 }
 
@@ -993,6 +991,10 @@ input[type=range]::-webkit-slider-thumb {
 	display: none;
 }
 
+#spectator_game {
+	display: none;
+}
+
 #menu {
 	width: 1000px;
 	height: 580px;
@@ -1258,6 +1260,15 @@ input[type=range]::-webkit-slider-thumb {
 	cursor: pointer;
 }
 
+#serverlist-block .body .block .watch-button {
+	transition: .3s;
+}
+
+#serverlist-block .body .block .watch-button:hover {
+	cursor: pointer;
+	color: #ffd350;
+}
+
 .circle {
 	background: #ccc;
 	width: 10px;
@@ -1469,4 +1480,110 @@ circle:hover {
   to {
     stroke-dashoffset: 100;
   }
+}
+
+.spectator-top-panel {
+	position: fixed;
+	top: 0;
+	left: 0;
+
+	display: flex;
+	float: left;
+	
+	color: #f1f1f1;
+	padding: 0;
+	margin: 0;
+
+	height: 42px;
+	width: 100%;
+}
+
+.spectator-top-panel div {
+	display: inline-flex;
+}
+
+.spectator-top-panel div:hover {
+	cursor: pointer;
+}
+
+.spectator-top-panel .image {
+	padding: 5px 7px;
+	width: 48px;
+	background-color: #111;
+}
+
+.spectator-top-panel .info {
+	width: 92px;
+	height: 42px;
+	font-size: 13px;
+	display: inline;
+	background-color: #111;
+}
+
+.spectator-top-panel .info .top {
+	padding-top: 4px;
+}
+
+.spectator-top-panel .info .bottom {
+	top: -6px;
+	position: relative;
+}
+
+.spectator-top-panel .balance {
+	margin: auto;
+	padding: 0;
+}
+
+.spectator-top-panel .balance div:hover, .spectator-top-panel .balance div:active, .spectator-top-panel .balance div:focus,
+.spectator-top-panel .diplomaty:hover, .spectator-top-panel .diplomaty:active, .spectator-top-panel .diplomaty:focus,
+.spectator-top-panel .peoples:hover, .spectator-top-panel .peoples:active, .spectator-top-panel .peoples:focus {
+	background-color: #111;
+	cursor: pointer;
+}
+
+.spectator-top-panel .peoples, .spectator-top-panel .diplomaty {
+	padding: 5px 7px;
+	width: 48px;
+	float: right;
+}
+
+.spectator-top-panel .right {
+	top: 0;
+	right: 0;
+
+	position: fixed;
+}
+
+.spectator-top-panel .right .info {
+    text-align: right;
+    padding-right: 5px;
+}
+
+.spectator_exit {
+	position: fixed;
+	top: 10px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.spectators {
+	position: fixed;
+    right: 58px;
+    top: 5px;
+    border-radius: 5px;
+    background-color: #222;
+    padding: 5px 7px;
+    width: 48px;
+    float: right;
+    display: none;
+    transition: 0.3s;
+}
+
+.spectators i {
+	padding: 3.3px 7px;
+}
+
+.spectators:hover {
+	cursor: pointer;
+	background-color: #111;
 }

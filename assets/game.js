@@ -31,6 +31,7 @@ socket.on('connect', function(data){
 	// 		$('#menu').css('display','none');
 	// 		$('#startgame').css('display','none');
 	// 		$('#serverlist').css('display','none');
+	//      $('#spectator_game').css('display','none');
 
 	// 		socket.emit('data', {
 	// 			command: 'CD003',
@@ -43,6 +44,7 @@ socket.on('connect', function(data){
 	$('#menu').css('display','block');
 	$('#startgame').css('display','none');
 	$('#serverlist').css('display','none');
+	$('#spectator_game').css('display','none');
 
 	socket.emit('data', {
 		command: 'CD003',
@@ -80,7 +82,8 @@ socket.on('data', function(data){
 		}
 	} else if(data.command == 'DC004'){
 		$('#servers_count').text(data.count);
-		$('#server-list_count').text(data.count);
+		$('#server-list_count1').text(data.count);
+		$('#server-list_count2').text(data.count);
 	}
 });
 
@@ -92,6 +95,7 @@ socket.on('game', function(data){
 		$('#menu').css('display','none');
 		$('#startgame').css('display','none');
 		$('#serverlist').css('display','none');
+		$('#spectator_game').css('display','none');
 
 		game_key = data.key;
 		if(data.player1 == this_player){
@@ -696,6 +700,14 @@ socket.on('game', function(data){
 				divName: null,
 				div: null
 			}];
+
+			socket.emit('game', {
+				command: 'GS003',
+				game_key: game_key,
+				player: player,
+				my_states_arr: my_states_arr,
+				enemy_states_arr: enemy_states_arr
+			});
 		}
 
 		if(data.player2 == this_player){
@@ -1300,6 +1312,14 @@ socket.on('game', function(data){
 				divName: null,
 				div: null
 			}];
+
+			socket.emit('game', {
+				command: 'GS003',
+				game_key: game_key,
+				player: player,
+				my_states_arr: my_states_arr,
+				enemy_states_arr: enemy_states_arr
+			});
 		}
 
 		if(player == 1){
@@ -1312,11 +1332,18 @@ socket.on('game', function(data){
 			$('#player_country_flag').attr('src','assets/img/ussr.png');
 		}
 
+		socket.emit('spectate', {
+			command: 'SPEC02',
+			key: game_key
+		});
+
 		updateStates();
 	} else if(data.command == 'SG002'){
 		if(game_key == data.key){
 			$('body').css('display','none');
 			alert('Ваш противник вышел из игры');
+
+			to_menu();
 		}
 	} else if(data.command == 'SG003'){
 		if(game_key == data.key){
@@ -1768,7 +1795,8 @@ function move_ok(){
 					key: game_key,
 					newstates: my_states_arr,
 					enemynewstates: enemy_states_arr,
-					byplayer: this_player
+					byplayer: this_player,
+					byplayer_num: player
 				});
 			}
 			if(my_states_arr[i].state == selected_state_movefrom){
@@ -1788,7 +1816,8 @@ function move_ok(){
 					key: game_key,
 					newstates: my_states_arr,
 					enemynewstates: enemy_states_arr,
-					byplayer: this_player
+					byplayer: this_player,
+					byplayer_num: player
 				});
 			}
 		}
@@ -1834,7 +1863,8 @@ function move_ok(){
 						key: game_key,
 						newstates: my_states_arr,
 						enemynewstates: enemy_states_arr,
-						byplayer: this_player
+						byplayer: this_player,
+						byplayer_num: player
 					});
 
 					let states = document.getElementsByTagName('polygon');
@@ -1863,7 +1893,8 @@ function move_ok(){
 						key: game_key,
 						newstates: my_states_arr,
 						enemynewstates: enemy_states_arr,
-						byplayer: this_player
+						byplayer: this_player,
+						byplayer_num: player
 					});
 				}
 			}
@@ -2084,6 +2115,7 @@ function to_createserver(){
 	$('#menu').css('display','none');
 	$('#startgame').css('display','block');
 	$('#serverlist').css('display','none');
+	$('#spectator_game').css('display','none');
 }
 
 function to_serverlist(){
@@ -2091,6 +2123,7 @@ function to_serverlist(){
 	$('#menu').css('display','none');
 	$('#startgame').css('display','none');
 	$('#serverlist').css('display','block');
+	$('#spectator_game').css('display','none');
 
 	socket.emit('server-list', {
 		command: 'CS002'
@@ -2098,10 +2131,29 @@ function to_serverlist(){
 }
 
 function to_menu(){
-	$('#game').css('display','none');
-	$('#menu').css('display','block');
-	$('#startgame').css('display','none');
-	$('#serverlist').css('display','none');
+	if(spectating == true){
+		socket.emit('spectate', {
+			command: 'SPEC03',
+			id: spectating_id
+		});
+
+		$('#game').css('display','none');
+		$('#menu').css('display','none');
+		$('#startgame').css('display','none');
+		$('#serverlist').css('display','block');
+		$('#spectator_game').css('display','none');
+	} else {
+		$('#game').css('display','none');
+		$('#menu').css('display','block');
+		$('#startgame').css('display','none');
+		$('#serverlist').css('display','none');
+		$('#spectator_game').css('display','none');
+	}
+
+	spectating = false;
+	spectating_key = null;
+	spec_player1_arr = [];
+	spec_player2_arr = [];
 }
 
 function randomserver(){
@@ -2160,6 +2212,7 @@ socket.on('server-list', function(data){
 					html = html +  `<div class="col-md-4 block">
 										<div class="block-header clearfix">
 											`+data.games[i].creator.first_name+` `+data.games[i].creator.last_name+`
+											<div class="watch-button float-right" onclick="serverlist_watch(`+i+`);"><i class="fas fa-eye"></i></div>
 										</div>
 										<div class="block-body">
 											<p>Статус: <b class="text-danger">закрыт</b></p>
@@ -2187,6 +2240,7 @@ socket.on('server-list', function(data){
 					html = html +  `<div class="col-md-4 block">
 										<div class="block-header clearfix">
 											`+data.games[i].creator.first_name+` `+data.games[i].creator.last_name+`
+											<div class="watch-button float-right" onclick="serverlist_watch(`+i+`);"><i class="fas fa-eye"></i></div>
 										</div>
 										<div class="block-body">
 											<p>Статус: <b class="text-danger">закрыт</b></p>
