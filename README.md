@@ -1,4 +1,4 @@
-[![браузерная версия](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://bagration-game.tk)
+[![браузерная версия](https://img.shields.io/badge/%D0%BE%D1%82%D0%BA%D1%80%D1%8B%D1%82%D1%8C-%D0%B8%D0%B3%D1%80%D1%83-brightgreen.svg)](https://bagration-game.tk)
 
 ## Историческая справка
 В 1944 году Красная армия освободила Беларусь. Действия советских армий по освобождению Беларуси вошли в историю как операция «Багратион». 
