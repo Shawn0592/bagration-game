@@ -1356,6 +1356,8 @@ socket.on('game', function(data){
 				enemy_states_arr = data.enemynewstates;
 				updateStates();
 			}
+
+			news();
 		}
 	} else if(data.command == 'SG004'){
 		if(game_key == data.key){
@@ -2024,7 +2026,8 @@ function changeColor(type){
 }
 
 //changeColor('notype');
-function say_about_cheats(){
+function report(){
+	if(spectating == true || !game_key) return;
 	// if(money > antiCheatSystem_lastMoney+58){
 	// 	socket.emit('anticheat', {
 	// 		command: 'CA001',
@@ -2493,3 +2496,39 @@ function popup(action){
 		setTimer(my_states_arr.length);
 	}
 }
+
+function news(){
+	setTimeout(function(){
+		var src1 = 'assets/img/news/'+randomInteger(1,39)+'.jpg';
+		$('#news_1 img').attr('src', src1);
+		$('#news_1').css('margin-left','5px');
+
+		var src2 = 'assets/img/news/'+randomInteger(1,39)+'.jpg';
+		$('#news_2 img').attr('src', src2);
+		$('#news_2').css('margin-left','5px');
+
+		setTimeout(function(){
+			var src3 = 'assets/img/news/'+randomInteger(1,39)+'.jpg';
+			$('#news_3 img').attr('src', src3);
+			$('#news_3').css('margin-left','5px');
+
+			setTimeout(function(){
+				$('#news_3').css('margin-left','-135px');
+
+				setTimeout(function(){
+					$('#news_2').css('margin-left','-135px');
+
+					setTimeout(function(){
+						$('#news_1').css('margin-left','-135px');
+
+						// setTimeout(function(){
+						// 	news();
+						// },2000);
+					}, 700);
+				}, 700);
+			}, 5000);
+		},700);
+		}, 700);
+}
+
+//news();
