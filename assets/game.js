@@ -41,10 +41,11 @@ socket.on('connect', function(data){
 	// },'5.80');
 
 	$('#game').css('display','none');
-	$('#menu').css('display','block');
+	$('#menu').css('display','none');
 	$('#startgame').css('display','none');
 	$('#serverlist').css('display','none');
 	$('#spectator_game').css('display','none');
+	$('#video').css('display','block');
 
 	socket.emit('data', {
 		command: 'CD003',
