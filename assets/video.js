@@ -88,3 +88,6 @@ $('.hi span:last-of-type').on('click', function(){
 setTimeout(function(){
   skipvideo();
 }, vid[currVid].endMiliseconds);
+
+// tv.pauseVideo();
+// tv.mute();

@@ -461,6 +461,14 @@ input[type=range]::-webkit-slider-thumb {
 	background-color: #222;
 }
 
+.top-panel .logs {
+	position: fixed;
+	right: 5px;
+	top: 57px;
+	border-radius: 5px;
+	background-color: #222;
+}
+
 .top-panel div {
 	display: inline-flex;
 }
@@ -508,13 +516,13 @@ input[type=range]::-webkit-slider-thumb {
 
 .top-panel .balance div:hover, .top-panel .balance div:active, .top-panel .balance div:focus,
 .top-panel .diplomaty:hover, .top-panel .diplomaty:active, .top-panel .diplomaty:focus,
-.top-panel .peoples:hover, .top-panel .peoples:active, .top-panel .peoples:focus {
+.top-panel .peoples:hover, .top-panel .peoples:active, .top-panel .peoples:focus, .logs:hover {
 	background-color: #111;
 	cursor: pointer;
 }
 
-.top-panel .peoples, .top-panel .diplomaty {
-	padding: 5px 7px;
+.top-panel .peoples, .top-panel .diplomaty, .top-panel .logs {
+	padding: 7.5px 7.5px;
 	width: 48px;
 	float: right;
 }
@@ -557,7 +565,7 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 .flag_teh label {
-	display: none;
+	opacity: 0;
 	transition: 0.5s;
 	color: #f1f1f1;
 }
@@ -572,7 +580,7 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 .flag_teh:hover label {
-	display: block;
+	opacity: 1;
 }
 
 .flag_ecom {
@@ -609,7 +617,7 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 .flag_ecom label {
-	display: none;
+	opacity: 0;
 	transition: 0.5s;
 }
 
@@ -623,7 +631,7 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 .flag_ecom:hover label {
-	display: block;
+	opacity: 1;
 }
 
 .flag_fac {
@@ -660,7 +668,7 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 .flag_fac label {
-	display: none;
+	opacity: 0;
 	transition: 0.5s;
 }
 
@@ -674,7 +682,7 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 .flag_fac:hover label {
-	display: block;
+	opacity: 1;
 }
 
 .flag_boo {
@@ -711,7 +719,7 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 .flag_boo label {
-	display: none;
+	opacity: 0;
 	transition: 0.5s;
 }
 
@@ -725,7 +733,7 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 .flag_boo:hover label {
-	display: block;
+	opacity: 1;
 }
 
 .right-panel {
@@ -1664,4 +1672,179 @@ circle:hover {
 	z-index: 2;
 
 	border-top-left-radius: 10px;
+}
+
+.opennews {
+	position: fixed;
+
+	top: 0;
+	left: 0;
+
+	background: rgba(0,0,0,0.9);
+
+	width: 100%;
+	height: 100%;
+
+	display: none;
+}
+
+.opennews #opennews_img {
+	height: 100vh;
+	width: 100vw;
+}
+
+.opennews #opennews_img img{
+	position: absolute;
+
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+
+	width: 50%;
+	height: 60%;
+	border: 10px solid #222;
+}
+
+.logs-list {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+
+	background: rgba(0,0,0,.9);
+
+	color: #fff;
+	display: none;
+}
+
+.list {
+	height: 60%;
+	width: 60%;
+
+	position: absolute;
+	left: 50%;
+	top: 50%;
+
+	transform: translate(-50%,-50%);
+
+	background-color: #222;
+	padding: 0.5em;
+
+	overflow-y: auto;
+}
+
+.list div {
+	width: 100%;
+	padding: 0.4em;
+}
+
+.list div .number {
+	padding: -2px 4px;
+	
+	border-radius: 3px;
+	background-color: #111;
+	color: #333;
+	margin-right: 5px;
+	font-weight: 900;
+	width: 4em;
+	text-align: center;
+}
+
+.list div:nth-child(odd){
+	background-color: #222;
+}
+
+.list div:nth-child(even){
+	background-color: #272727;
+}
+
+.logs-list .close {
+	color: #fff;
+	padding: 5px 10px;
+	border: 4px solid #fff;
+
+	position: absolute;
+	top: 50%;
+	right: 10%;
+
+	transform: translateY(-50%);
+	transition: .3s;
+}
+
+.logs-list .close:hover {
+	background: #fff;
+	color: transparent;
+}
+
+.support-list {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+
+	background: rgba(0,0,0,.9);
+
+	color: #fff;
+	display: none;
+}
+
+.support {
+	height: 60%;
+	width: 60%;
+
+	position: absolute;
+	left: 50%;
+	top: 50%;
+
+	transform: translate(-50%,-50%);
+
+	background-color: #222;
+	padding: 0.5em;
+
+	overflow-y: auto;
+}
+
+.support div {
+	width: 100%;
+	padding: 0.4em;
+}
+
+.support div .number {
+	padding: -2px 4px;
+	
+	border-radius: 3px;
+	background-color: #111;
+	color: #333;
+	margin-right: 5px;
+	font-weight: 900;
+	width: 4em;
+	text-align: center;
+}
+
+.support div:nth-child(odd){
+	background-color: #222;
+}
+
+.support div:nth-child(even){
+	background-color: #272727;
+}
+
+.support-list .close {
+	color: #fff;
+	padding: 5px 10px;
+	border: 4px solid #fff;
+
+	position: absolute;
+	top: 50%;
+	right: 10%;
+
+	transform: translateY(-50%);
+	transition: .3s;
+}
+
+.support-list .close:hover {
+	background: #fff;
+	color: transparent;
 }

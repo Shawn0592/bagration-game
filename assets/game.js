@@ -5,6 +5,8 @@ let my_states_arr = [], enemy_states_arr = [];
 let move = false;
 let selected_state_movefrom;
 
+let italy_support, japan_support = false;
+
 let player_params = {
 	first_name: 'Дмитрий',
 	last_name: 'Вансович'
@@ -2403,6 +2405,54 @@ $("div").mousedown(function() {
 	audio.play();
 });
 
+function getSupport(country, army, time){
+	if(country == 'Италия' && italy_support == true) return;
+	if(country == 'Япония' && japan_support == true) return;
+
+	if(country == 'Италия'){
+		italy_support = true;
+		$('#italy_sup').css('display','none');
+	} else if(country == 'Япония'){
+		japan_support = true;
+		$('#japan_sup').css('display','none');
+		
+	}
+
+	setTimeout(function(){
+		if(game_key){
+			let states = document.getElementsByTagName('polygon');
+			var my_src, enemy_src;
+
+			if(player == 1){ 
+				my_src = 'assets/img/germany_reich.png';
+				enemy_src = 'assets/img/ussr.png'; 
+			} else { 
+				my_src = 'assets/img/ussr.png';
+				enemy_src = 'assets/img/germany_reich.png'; 
+			}
+
+			for(var i = 0; i < my_states_arr.length; i++){
+				if(my_states_arr[i].army == 0){
+					my_states_arr[i].army = army;
+					my_states_arr[i].divName = country;
+					my_states_arr[i].div = 4;
+
+
+					socket.emit('game',{
+						command: "GS001",
+						key: game_key,
+						newstates: my_states_arr,
+						enemynewstates: enemy_states_arr,
+						byplayer: this_player
+					});
+
+					return true;
+				}
+			}
+		}
+	},time*1000);
+}
+
 function setRandomArmy(army){
 	let states = document.getElementsByTagName('polygon');
 	var my_src, enemy_src;
@@ -2502,34 +2552,65 @@ function news(){
 	setTimeout(function(){
 		var src1 = 'assets/img/news/'+randomInteger(1,39)+'.jpg';
 		$('#news_1 img').attr('src', src1);
+		document.getElementById('news_1').setAttribute('onClick','openNews("'+src1+'");');
 		$('#news_1').css('margin-left','5px');
 
-		var src2 = 'assets/img/news/'+randomInteger(1,39)+'.jpg';
-		$('#news_2 img').attr('src', src2);
-		$('#news_2').css('margin-left','5px');
-
 		setTimeout(function(){
-			var src3 = 'assets/img/news/'+randomInteger(1,39)+'.jpg';
-			$('#news_3 img').attr('src', src3);
-			$('#news_3').css('margin-left','5px');
+			var src2 = 'assets/img/news/'+randomInteger(1,39)+'.jpg';
+			$('#news_2 img').attr('src', src2);
+			document.getElementById('news_2').setAttribute('onClick','openNews("'+src2+'");');
+			$('#news_2').css('margin-left','5px');
 
 			setTimeout(function(){
-				$('#news_3').css('margin-left','-135px');
+				var src3 = 'assets/img/news/'+randomInteger(1,39)+'.jpg';
+				$('#news_3 img').attr('src', src3);
+				document.getElementById('news_3').setAttribute('onClick','openNews("'+src3+'");');
+				$('#news_3').css('margin-left','5px');
 
 				setTimeout(function(){
-					$('#news_2').css('margin-left','-135px');
+					$('#news_3').css('margin-left','-135px');
 
 					setTimeout(function(){
-						$('#news_1').css('margin-left','-135px');
+						$('#news_2').css('margin-left','-135px');
 
-						// setTimeout(function(){
-						// 	news();
-						// },2000);
+						setTimeout(function(){
+							$('#news_1').css('margin-left','-135px');
+
+							// setTimeout(function(){
+							// 	news();
+							// },2000);
+						}, 700);
 					}, 700);
-				}, 700);
-			}, 5000);
+				}, 5000);
+			},700);
 		},700);
-		}, 700);
+	}, 700);
 }
 
 //news();
+
+
+function openNews(src){
+	$('.opennews #opennews_img img').attr('src',src);
+	$('.opennews').css('display','block');
+};
+
+function hideNews(){
+	$('.opennews').css('display','none');
+};
+
+function openLogs(){
+	$('.logs-list').css('display','block');
+};
+
+function hideLogs(){
+	$('.logs-list').css('display','none');
+};
+
+function openSupport(){
+	$('.support-list').css('display','block');
+};
+
+function hideSupport(){
+	$('.support-list').css('display','none');
+};
