@@ -5,7 +5,7 @@ let my_states_arr = [], enemy_states_arr = [];
 let move = false;
 let selected_state_movefrom;
 
-let italy_support, japan_support = false;
+let _sup1,_sup2,_sup3,_sup4,_sup5,_sup6,_sup7,_sup8,_sup9,_sup10,_sup11,_sup12 = false;
 
 let player_params = {
 	first_name: 'Дмитрий',
@@ -1803,6 +1803,20 @@ function move_ok(){
 					byplayer: this_player,
 					byplayer_num: player
 				});
+
+				let raion_ru = '';
+
+				for(var j = 0; j < GLOBAL_MAP.length; j++){
+					if(GLOBAL_MAP[j].id == selected_state_move+'-raion') raion_ru = GLOBAL_MAP[j].name
+				}
+
+				socket.emit('logs', {
+					command: 'logs1',
+					key: game_key,
+					_action: {
+						text: '<b><ins>'+player_country+'</ins></b> переместила войска на <b><ins>'+raion_ru+'</ins></b> район'
+					}
+				});
 			}
 			if(my_states_arr[i].state == selected_state_movefrom){
 				my_states_arr[i].army = my_states_arr[i].army*1 - movefrom_army*1;
@@ -1860,6 +1874,20 @@ function move_ok(){
 						enemy_states_arr[i].divName = movefrom_divName;
 					}
 
+					let raion_ru = '';
+
+					for(var j = 0; j < GLOBAL_MAP.length; j++){
+						if(GLOBAL_MAP[j].id == selected_state_move+'-raion') raion_ru = GLOBAL_MAP[j].name
+					}
+
+					socket.emit('logs', {
+						command: 'logs1',
+						key: game_key,
+						_action: {
+							text: '<b><ins>'+player_country+'</ins></b> атаковал <b><ins>'+raion_ru+'</ins></b> район. Победу в бою одержал <b><ins>'+player_country+'</ins></b>'
+						}
+					});
+
 					my_states_arr.push(enemy_states_arr[i]);
 					enemy_states_arr.splice(i, 1);
 
@@ -1892,6 +1920,23 @@ function move_ok(){
 					selected_state_move = null;
 				} else {
 					enemy_states_arr[i].army = enemy_states_arr[i].army - movefrom_army;
+
+					let raion_ru = '';
+					let enemy_country;
+
+					if(player_country == 'Рейх'){ enemy_country = 'СССР' } else { enemy_country = 'Рейх' }
+
+					for(var j = 0; j < GLOBAL_MAP.length; j++){
+						if(GLOBAL_MAP[j].id == selected_state_move+'-raion') raion_ru = GLOBAL_MAP[j].name
+					}
+
+					socket.emit('logs', {
+						command: 'logs1',
+						key: game_key,
+						_action: {
+							text: '<b><ins>'+player_country+'</ins></b> атаковал <b><ins>'+raion_ru+'</ins></b> район. Победу в бою одержал <b><ins>'+enemy_country+'</ins></b>'
+						}
+					});
 
 					socket.emit('game',{
 						command: "GS001",
@@ -2406,16 +2451,53 @@ $("div").mousedown(function() {
 });
 
 function getSupport(country, army, time){
-	if(country == 'Италия' && italy_support == true) return;
-	if(country == 'Япония' && japan_support == true) return;
-
-	if(country == 'Италия'){
-		italy_support = true;
-		$('#italy_sup').css('display','none');
-	} else if(country == 'Япония'){
-		japan_support = true;
-		$('#japan_sup').css('display','none');
-		
+	if(country == 'Великобритания' && _sup1 == true){ return; } else {
+		_sup1 = true;
+		$('#_sup1').css('display','none');
+	}
+	if(country == 'Франция' && _sup2 == true){ return; } else {
+		_sup2 = true;
+		$('#_sup2').css('display','none');
+	}
+	if(country == 'Австралия' && _sup3 == true){ return; } else {
+		_sup3 = true;
+		$('#_sup3').css('display','none');
+	}
+	if(country == 'Новая Зеландия' && _sup4 == true){ return; } else {
+		_sup4 = true;
+		$('#_sup4').css('display','none');
+	}
+	if(country == 'Канада' && _sup5 == true){ return; } else {
+		_sup5 = true;
+		$('#_sup5').css('display','none');
+	}
+	if(country == 'США' && _sup6 == true){ return; } else {
+		_sup6 = true;
+		$('#_sup6').css('display','none');
+	}
+	if(country == 'Италия' && _sup7 == true){ return; } else {
+		_sup7 = true;
+		$('#_sup7').css('display','none');
+	}
+	if(country == 'Румыния' && _sup8 == true){ return; } else {
+		_sup8 = true;
+		$('#_sup8').css('display','none');
+	}
+	if(country == 'Словакия' && _sup9 == true){ return; } else {
+		_sup9 = true;
+		$('#_sup9').css('display','none');
+	}
+	if(country == 'Финляндия' && _sup10 == true){ return; } else {
+		_sup10 = true;
+		$('#_sup10').css('display','none');
+	}
+	if(country == 'Венгрия' && _sup11 == true){ return; } else {
+		_sup11 = true;
+		$('#_sup11').css('display','none');
+	}
+	if(country == 'Япония' && _sup12 == true){ return; } else {
+		_sup12 = true;
+		$('#_sup12').css('display','none');
 	}
 
 	setTimeout(function(){
@@ -2437,6 +2519,19 @@ function getSupport(country, army, time){
 					my_states_arr[i].divName = country;
 					my_states_arr[i].div = 4;
 
+					let raion_ru = '';
+
+					for(var j = 0; j < GLOBAL_MAP.length; j++){
+						if(GLOBAL_MAP[j].id == my_states_arr[i].state+'-raion') raion_ru = GLOBAL_MAP[j].name
+					}
+
+					socket.emit('logs', {
+						command: 'logs1',
+						key: game_key,
+						_action: {
+							text: '<b><ins>'+player_country+'</ins></b> получил поддержку от союзника <b><ins>'+country+'</ins></b>. Отряд численностью <b><ins>'+army+'T</ins></b> дислоцировался на <b><ins>'+raion_ru+'</ins></b> район'
+						}
+					});
 
 					socket.emit('game',{
 						command: "GS001",
@@ -2471,6 +2566,19 @@ function setRandomArmy(army){
 			my_states_arr[i].divName = 'Добровольцы';
 			my_states_arr[i].div = 4;
 
+			let raion_ru = '';
+
+			for(var j = 0; j < GLOBAL_MAP.length; j++){
+				if(GLOBAL_MAP[j].id == my_states_arr[i].state+'-raion') raion_ru = GLOBAL_MAP[j].name
+			}
+
+			socket.emit('logs', {
+				command: 'logs1',
+				key: game_key,
+				_action: {
+					text: '<b><ins>'+player_country+'</ins></b> провёл призыв. После окончания призыва создался отряд <b><ins>Добровольцев</ins></b> численностью <b><ins>'+army+'T</ins></b>'
+				}
+			});
 
 			socket.emit('game',{
 				command: "GS001",
@@ -2600,14 +2708,44 @@ function hideNews(){
 };
 
 function openLogs(){
+	socket.emit('logs', {
+		command: "logs3",
+		key: game_key
+
+	})
+	
 	$('.logs-list').css('display','block');
 };
+
+socket.on('logs', function(data){
+	if(data.command == 'logs2'){
+		if(data.key == game_key){
+			var el = document.getElementsByClassName('list')[0];
+
+			var html = '<div class="text-center m-1 p-3">Хронология действий</div>';
+
+			console.log(data.actions);
+			for(var i = 0; i < data.actions.length; i++){
+				html = html + '<div><label class="number">'+(i+1)*1+'</label> '+data.actions[i].text+'</div>';
+			}
+
+			el.innerHTML = html;
+			el.scrollTop = el.scrollHeight;
+		}
+	}
+});
 
 function hideLogs(){
 	$('.logs-list').css('display','none');
 };
 
 function openSupport(){
+	if(player_country == 'СССР'){
+		document.getElementsByClassName('support')[0].innerHTML = `<div class="text-center m-1 p-3">Запросить поддержку</div><div class="clearfix"><label class="number">250Т</label> <b><ins>Великобритания</ins></b>. Прибытие через <b><ins>200 секунд</ins></b> после запроса<label class="float-right"><button class="btn btn-sm btn-outline-success float-left" onclick="getSupport('Великобритания', 250, 200);" style="font-size:10px;padding:3px 5px;" id="_sup1"><b>Запросить</b></button></label></div><div class="clearfix"><label class="number">200Т</label> <b><ins>Франция</ins></b>. Прибытие через <b><ins>170 секунд</ins></b> после запроса<label class="float-right"><button class="btn btn-sm btn-outline-success float-left" onclick="getSupport('Франция', 200, 170);" style="font-size:10px;padding:3px 5px;" id="_sup2"><b>Запросить</b></button></label></div><div class="clearfix"><label class="number">150Т</label> <b><ins>Австралия</ins></b>. Прибытие через <b><ins>230 секунд</ins></b> после запроса<label class="float-right"><button class="btn btn-sm btn-outline-success float-left" onclick="getSupport('Австралия', 150, 230);" style="font-size:10px;padding:3px 5px;" id="_sup3"><b>Запросить</b></button></label></div><div class="clearfix"><label class="number">130Т</label> <b><ins>Новая Зеландия</ins></b>. Прибытие через <b><ins>250 секунд</ins></b> после запроса<label class="float-right"><button class="btn btn-sm btn-outline-success float-left" onclick="getSupport('Новая Зеландия', 130, 250);" style="font-size:10px;padding:3px 5px;" id="_sup4"><b>Запросить</b></button></label></div><div class="clearfix"><label class="number">100Т</label> <b><ins>Канада</ins></b>. Прибытие через <b><ins>200 секунд</ins></b> после запроса<label class="float-right"><button class="btn btn-sm btn-outline-success float-left" onclick="getSupport('Канада', 100, 200);" style="font-size:10px;padding:3px 5px;" id="_sup5"><b>Запросить</b></button></label></div><div class="clearfix"><label class="number">250Т</label> <b><ins>США</ins></b>. Прибытие через <b><ins>200 секунд</ins></b> после запроса<label class="float-right"><button class="btn btn-sm btn-outline-success float-left" onclick="getSupport('США', 250, 200);" style="font-size:10px;padding:3px 5px;" id="_sup6"><b>Запросить</b></button></label></div>`;
+	} else if(player_country == 'Рейх'){
+		document.getElementsByClassName('support')[0].innerHTML = `<div class="text-center m-1 p-3">Запросить поддержку</div><div class="clearfix"><label class="number">250Т</label> <b><ins>Италия</ins></b>. Прибытие через <b><ins>200 секунд</ins></b> после запроса<label class="float-right"><button class="btn btn-sm btn-outline-success float-left" onclick="getSupport('Италия', 250, 200);" style="font-size:10px;padding:3px 5px;" id="_sup7"><b>Запросить</b></button></label></div><div class="clearfix"><label class="number">200Т</label> <b><ins>Румыния</ins></b>. Прибытие через <b><ins>170 секунд</ins></b> после запроса<label class="float-right"><button class="btn btn-sm btn-outline-success float-left" onclick="getSupport('Румыния', 200, 170);" style="font-size:10px;padding:3px 5px;" id="_sup8"><b>Запросить</b></button></label></div><div class="clearfix"><label class="number">150Т</label> <b><ins>Словакия</ins></b>. Прибытие через <b><ins>230 секунд</ins></b> после запроса<label class="float-right"><button class="btn btn-sm btn-outline-success float-left" onclick="getSupport('Словакия', 150, 230);" style="font-size:10px;padding:3px 5px;" id="_sup9"><b>Запросить</b></button></label></div><div class="clearfix"><label class="number">130Т</label> <b><ins>Финляндия</ins></b>. Прибытие через <b><ins>250 секунд</ins></b> после запроса<label class="float-right"><button class="btn btn-sm btn-outline-success float-left" onclick="getSupport('Финляндия', 130, 250);" style="font-size:10px;padding:3px 5px;" id="_sup10"><b>Запросить</b></button></label></div><div class="clearfix"><label class="number">250Т</label> <b><ins>Венгрия</ins></b>. Прибытие через <b><ins>200 секунд</ins></b> после запроса<label class="float-right"><button class="btn btn-sm btn-outline-success float-left" onclick="getSupport('Венгрия', 250, 200);" style="font-size:10px;padding:3px 5px;" id="_sup11"><b>Запросить</b></button></label></div><div class="clearfix"><label class="number">250Т</label> <b><ins>Япония</ins></b>. Прибытие через <b><ins>200 секунд</ins></b> после запроса<label class="float-right"><button class="btn btn-sm btn-outline-success float-left" onclick="getSupport('Япония', 250, 200);" style="font-size:10px;padding:3px 5px;" id="_sup12"><b>Запросить</b></button></label></div>`;
+	}
+
 	$('.support-list').css('display','block');
 };
 
