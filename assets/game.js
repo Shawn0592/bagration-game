@@ -2451,51 +2451,51 @@ $("div").mousedown(function() {
 });
 
 function getSupport(country, army, time){
-	if(country == 'Великобритания' && _sup1 == true){ return; } else {
+	if(country == 'Великобритания' && _sup1 == true){ return; } else if(country == 'Великобритания'){
 		_sup1 = true;
 		$('#_sup1').css('display','none');
 	}
-	if(country == 'Франция' && _sup2 == true){ return; } else {
+	if(country == 'Франция' && _sup2 == true){ return; } else if(country == 'Франция'){
 		_sup2 = true;
 		$('#_sup2').css('display','none');
 	}
-	if(country == 'Австралия' && _sup3 == true){ return; } else {
+	if(country == 'Австралия' && _sup3 == true){ return; } else if(country == 'Австралия'){
 		_sup3 = true;
 		$('#_sup3').css('display','none');
 	}
-	if(country == 'Новая Зеландия' && _sup4 == true){ return; } else {
+	if(country == 'Новая Зеландия' && _sup4 == true){ return; } else if(country == 'Новая Зеландия'){
 		_sup4 = true;
 		$('#_sup4').css('display','none');
 	}
-	if(country == 'Канада' && _sup5 == true){ return; } else {
+	if(country == 'Канада' && _sup5 == true){ return; } else if(country == 'Канада'){
 		_sup5 = true;
 		$('#_sup5').css('display','none');
 	}
-	if(country == 'США' && _sup6 == true){ return; } else {
+	if(country == 'США' && _sup6 == true){ return; } else if(country == 'США'){
 		_sup6 = true;
 		$('#_sup6').css('display','none');
 	}
-	if(country == 'Италия' && _sup7 == true){ return; } else {
+	if(country == 'Италия' && _sup7 == true){ return; } else if(country == 'Италия'){
 		_sup7 = true;
 		$('#_sup7').css('display','none');
 	}
-	if(country == 'Румыния' && _sup8 == true){ return; } else {
+	if(country == 'Румыния' && _sup8 == true){ return; } else if(country == 'Румыния'){
 		_sup8 = true;
 		$('#_sup8').css('display','none');
 	}
-	if(country == 'Словакия' && _sup9 == true){ return; } else {
+	if(country == 'Словакия' && _sup9 == true){ return; } else if(country == 'Словакия'){
 		_sup9 = true;
 		$('#_sup9').css('display','none');
 	}
-	if(country == 'Финляндия' && _sup10 == true){ return; } else {
+	if(country == 'Финляндия' && _sup10 == true){ return; } else if(country == 'Финляндия'){
 		_sup10 = true;
 		$('#_sup10').css('display','none');
 	}
-	if(country == 'Венгрия' && _sup11 == true){ return; } else {
+	if(country == 'Венгрия' && _sup11 == true){ return; } else if(country == 'Венгрия'){
 		_sup11 = true;
 		$('#_sup11').css('display','none');
 	}
-	if(country == 'Япония' && _sup12 == true){ return; } else {
+	if(country == 'Япония' && _sup12 == true){ return; } else if(country == 'Япония'){
 		_sup12 = true;
 		$('#_sup12').css('display','none');
 	}
@@ -2723,8 +2723,6 @@ socket.on('logs', function(data){
 			var el = document.getElementsByClassName('list')[0];
 
 			var html = '<div class="text-center m-1 p-3">Хронология действий</div>';
-
-			console.log(data.actions);
 			for(var i = 0; i < data.actions.length; i++){
 				html = html + '<div><label class="number">'+(i+1)*1+'</label> '+data.actions[i].text+'</div>';
 			}
