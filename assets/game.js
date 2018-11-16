@@ -4,6 +4,8 @@ let player1, player2, this_player, game_key, player, player_country;
 let my_states_arr = [], enemy_states_arr = [];
 let move = false;
 let selected_state_movefrom;
+let spy = false;
+let spu_from;
 
 let _sup1,_sup2,_sup3,_sup4,_sup5,_sup6,_sup7,_sup8,_sup9,_sup10,_sup11,_sup12 = false;
 
@@ -34,6 +36,7 @@ socket.on('connect', function(data){
 	// 		$('#startgame').css('display','none');
 	// 		$('#serverlist').css('display','none');
 	//      $('#spectator_game').css('display','none');
+	//		$('#video').css('display','none');
 
 	// 		socket.emit('data', {
 	// 			command: 'CD003',
@@ -99,6 +102,7 @@ socket.on('game', function(data){
 		$('#startgame').css('display','none');
 		$('#serverlist').css('display','none');
 		$('#spectator_game').css('display','none');
+		$('#video').css('display','none');
 
 		game_key = data.key;
 		if(data.player1 == this_player){
@@ -1437,9 +1441,10 @@ document.getElementsByClassName('moveBlock_range')[0].addEventListener('input', 
 });
 
 let selected_state_move = null;
+let spy_to = null;
 function click(state){
 	if(selected_state != state){
-		if(move == false){
+		if(move == false && spy == false){
 			let states = document.getElementsByTagName('polygon');
 			for(let i = 0; i < states.length; i++){
 				states[i].style.opacity = '0.3';
@@ -1553,7 +1558,7 @@ function click(state){
 					}	
 				}
 			}
-		} else if(!selected_state_move) {
+		} else if(!selected_state_move && move == true) {
 			let states = document.getElementsByTagName('polygon');
 			let thisstate = document.getElementById(selected_state_movefrom);	
 
@@ -1595,9 +1600,36 @@ function click(state){
 			}
 
 			selected_state = null;
+		} else if(!spy_to && spy == true) {
+			let states = document.getElementsByTagName('polygon');
+			let thisstate = document.getElementById(spy_from);	
+
+			for(let i = 0; i < my_states_arr.length; i++){
+				if(my_states_arr[i].state == spy_to){
+					return;
+				}
+			}
+
+			$('.move').css('display','none');
+
+			spy_to = state;
+
+			if(document.getElementById(state+'-raion').style.opacity == '0.3'){
+				document.getElementById(state+'-raion').style.opacity = '1';
+			}
+
+			for(let i = 0; i < states.length; i++){
+				if(states[i].style.opacity != '1'){
+					states[i].style.opacity = '0.3';
+				}
+			}
+
+			spyGo(spy_from, spy_to+'-raion');
+
+			selected_state = null;
 		}
 	} else {
-		move_cancel();
+		if(move == false && spy == false) move_cancel();
 	}
 }
 
@@ -1612,6 +1644,22 @@ function show_moveArmy() {
 			selected_state_movefrom = selected_state+'-raion';
 
 			getCollision(my_states_arr[i].state);
+		}
+	}
+}
+
+function show_anon(){
+	$('.bottom_menu').css('display','none');
+	$('.getArmy').css('display','none');
+	$('.deleteArmy').css('display','none');
+	$('.right-panel').css('display','none');
+
+	for(var i = 0; i < my_states_arr.length; i++){
+		if(my_states_arr[i].state == selected_state+'-raion'){
+			if(my_states_arr[i].army == 0) return;
+			if(my_states_arr[i].army <= 0.6) return;
+			spy = true;
+			spy_from = selected_state+'-raion';
 		}
 	}
 }
@@ -1980,10 +2028,15 @@ function move_cancel(){
 		my_states[i].style.opacity = '1';
 	}
 
-	move = false;
 	selected_state = null;
+
+	move = false;
 	selected_state_move = null;
 	selected_state_movefrom = null;
+
+	spy = false;
+	spy_from = null;
+	spy_to = null;
 
 	document.getElementById('border').innerHTML = '';
 }
@@ -2173,6 +2226,7 @@ function to_createserver(){
 	$('#startgame').css('display','block');
 	$('#serverlist').css('display','none');
 	$('#spectator_game').css('display','none');
+	$('#video').css('display','none');
 }
 
 function to_serverlist(){
@@ -2181,6 +2235,7 @@ function to_serverlist(){
 	$('#startgame').css('display','none');
 	$('#serverlist').css('display','block');
 	$('#spectator_game').css('display','none');
+	$('#video').css('display','none');
 
 	socket.emit('server-list', {
 		command: 'CS002'
@@ -2199,12 +2254,14 @@ function to_menu(){
 		$('#startgame').css('display','none');
 		$('#serverlist').css('display','block');
 		$('#spectator_game').css('display','none');
+		$('#video').css('display','none');
 	} else {
 		$('#game').css('display','none');
 		$('#menu').css('display','block');
 		$('#startgame').css('display','none');
 		$('#serverlist').css('display','none');
 		$('#spectator_game').css('display','none');
+		$('#video').css('display','none');
 	}
 
 	spectating = false;
@@ -2262,7 +2319,7 @@ socket.on('server-list', function(data){
 											<p>Статус: <b class="text-success">открыт</b></p>
 											<p>Сложность: <b class="text-success">лёгкая</b></p>
 											<p>Игроков: <b class="text-primary">1/2</b></p>
-											<p>Пароль: <b class="text-success">нету</b></p>
+											<p>Пароль: <b class="text-success">нет</b></p>
 										</div>
 									</div>`;
 				} else {
@@ -2275,7 +2332,7 @@ socket.on('server-list', function(data){
 											<p>Статус: <b class="text-danger">закрыт</b></p>
 											<p>Сложность: <b class="text-success">лёгкая</b></p>
 											<p>Игроков: <b class="text-primary">2/2</b></p>
-											<p>Пароль: <b class="text-success">нету</b></p>
+											<p>Пароль: <b class="text-success">нет</b></p>
 										</div>
 									</div>`;
 				}
@@ -2528,7 +2585,7 @@ function getSupport(country, army, time){
 					let raion_ru = '';
 
 					for(var j = 0; j < GLOBAL_MAP.length; j++){
-						if(GLOBAL_MAP[j].id == my_states_arr[i].state+'-raion') raion_ru = GLOBAL_MAP[j].name
+						if(GLOBAL_MAP[j].id == my_states_arr[i].state) raion_ru = GLOBAL_MAP[j].name
 					}
 
 					socket.emit('logs', {
@@ -2575,7 +2632,7 @@ function setRandomArmy(army){
 			let raion_ru = '';
 
 			for(var j = 0; j < GLOBAL_MAP.length; j++){
-				if(GLOBAL_MAP[j].id == my_states_arr[i].state+'-raion') raion_ru = GLOBAL_MAP[j].name
+				if(GLOBAL_MAP[j].id == my_states_arr[i].state) raion_ru = GLOBAL_MAP[j].name
 			}
 
 			socket.emit('logs', {
@@ -2750,3 +2807,134 @@ function openSupport(){
 function hideSupport(){
 	$('.support-list').css('display','none');
 };
+
+function spyGo(from, to){
+	let from_army, to_army, from_div, from_divName;
+
+	if(spy_stopped == false){
+		for(var i = 0; i < my_states_arr.length; i++){
+			if(my_states_arr[i].state == from){
+				let randomArmy = randomInteger(1, 4);
+
+				if(randomArmy == 1) from_army = 0.05;
+				if(randomArmy == 2) from_army = 0.1;
+				if(randomArmy == 3) from_army = 0.2;
+				if(randomArmy == 4) from_army = 0.5;
+
+				my_states_arr[i].army = my_states_arr[i].army - from_army;
+				my_states_arr[i].div = null;
+				my_states_arr[i].divName = null;
+				updateArmy();
+			}
+		}
+
+		for(var i = 0; i < enemy_states_arr.length; i++){
+			if(enemy_states_arr[i].state == from){
+				to_army = enemy_states_arr[i].army;
+			}
+		}
+
+		setTimeout(function(){
+			for(var i = 0; i < enemy_states_arr.length; i++){
+				if(enemy_states_arr[i].state == to){
+					if(enemy_states_arr[i].army > from_army){
+						enemy_states_arr[i].army = enemy_states_arr[i].army - from_army;
+
+						let raion_ru = '';
+						let enemy_country;
+
+						if(player_country == 'Рейх'){ enemy_country = 'СССР' } else { enemy_country = 'Рейх' }
+
+						for(var j = 0; j < GLOBAL_MAP.length; j++){
+							if(GLOBAL_MAP[j].id == to) raion_ru = GLOBAL_MAP[j].name
+						}
+
+						socket.emit('logs', {
+							command: 'logs1',
+							key: game_key,
+							_action: {
+								text: '<b><ins>'+player_country+'</ins></b> скрытно атаковал <b><ins>'+raion_ru+'</ins></b> район. Победу в бою одержал <b><ins>'+enemy_country+'</ins></b>'
+							}
+						});
+
+						socket.emit('game',{
+							command: "GS001",
+							key: game_key,
+							newstates: my_states_arr,
+							enemynewstates: enemy_states_arr,
+							byplayer: this_player,
+							byplayer_num: player
+						});
+
+						let states = document.getElementsByTagName('polygon');
+						for(var x = 0; x < states.length; x++){
+							if(states[x].id == spy_to+'-raion'){
+								socket.emit('game', {
+									command: "GS002",
+									key: game_key,
+									state: x
+								});
+								if(player == 1){
+									states[x].setAttribute("class","model-green");
+								} else {
+									states[x].setAttribute("class","model-red");
+								}
+							}
+						}
+
+						move_cancel();
+						spy_to = null;
+					} else {
+						if(enemy_states_arr[i].army != 0){ enemy_states_arr[i].army = enemy_states_arr[i].army - from_army; } else {
+							enemy_states_arr[i].army = from_army;
+						}
+
+						enemy_states_arr[i].div = from_div;
+						enemy_states_arr[i].divName = from_divName;
+
+						my_states_arr.push(enemy_states_arr[i]);
+						enemy_states_arr.splice(i, 1);
+
+						let raion_ru = '';
+						for(var j = 0; j < GLOBAL_MAP.length; j++){
+							if(GLOBAL_MAP[j].id == to) raion_ru = GLOBAL_MAP[j].name
+						}
+
+						socket.emit('logs', {
+							command: 'logs1',
+							key: game_key,
+							_action: {
+								text: '<b><ins>'+player_country+'</ins></b> скрытно атаковал <b><ins>'+raion_ru+'</ins></b> район. Победу в бою одержал <b><ins>'+player_country+'</ins></b>'
+							}
+						});
+
+						socket.emit('game',{
+							command: "GS001",
+							key: game_key,
+							newstates: my_states_arr,
+							enemynewstates: enemy_states_arr,
+							byplayer: this_player,
+							byplayer_num: player
+						});
+					}
+				}
+			}
+		}, 10000);
+	}
+
+	spy_stopped = true;
+	stopSpy(600);
+	move_cancel();
+}
+
+let spy_stopped = true;
+
+setTimeout(function(){
+	spy_stopped = false;
+}, 420000);
+
+function stopSpy(time){
+	setTimeout(function(){
+		spy_stopped = false;
+	}, time*1000);
+}

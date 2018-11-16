@@ -428,8 +428,11 @@
 				</div>
 			</div>
 			<div class="header row buttons p-0">
-				<div class="col-md-12 py-3" onclick="show_moveArmy();">
+				<div class="col-md-6 py-3" onclick="show_moveArmy();">
 					<div class="mx-auto"><div class="button"><img src="assets/img/move.png" width="24" height="24"></div></div>
+				</div>
+				<div class="col-md-6 py-3" onclick="show_anon();">
+					<div class="mx-auto"><div class="button"><img src="assets/img/soldiers.png" width="24" height="24"></div></div>
 				</div>
 			</div>
 		</div>
@@ -917,9 +920,17 @@
 	</div>
 
 	<div id="video">
-		<div class="skip"><button class="btn btn-sm btn-outline-light float-left" style="font-size:16px;padding:3px 5px;margin-top:-3px;border-width:2px;" onclick="skipvideo();"><b>Пропустить</b></button></div>
-		<div class="tv">
-			  <div class="screen" id="tv"></div>
+		<img src="assets/img/map.jpg" alt="">
+		<div class="background">
+			<div class="text">
+				Операция<br>"Багратион"
+				<p class="small">Загрузка.. <i class="fas fa-spinner fa-spin"></i></p>
+			</div>
+			
+			<div class="skip"><button class="btn btn-sm btn-outline-light float-left" style="font-size:16px;padding:3px 5px;margin-top:-3px;border-width:2px;" onclick="skipvideo();"><b>Пропустить</b></button></div>
+			<div class="tv">
+				  <div class="screen" id="tv"></div>
+			</div>
 		</div>
 	</div>
 

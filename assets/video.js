@@ -25,6 +25,7 @@ function onPlayerStateChange(e) {
     $('#tv').addClass('active');
     setTimeout(function(){
       $('.tv .screen').css('opacity','1');
+      $('.skip').css('opacity', '1');
     }, 3000);
     $('.hi em:nth-of-type(2)').html(currVid + 1);
   } else if (e.data === 2){
@@ -36,6 +37,8 @@ function onPlayerStateChange(e) {
     }
     tv.loadVideoById(vid[currVid]);
     $('.tv .screen').css('opacity','1');
+    $('.skip').css('opacity', '1');
+    
     tv.seekTo(vid[currVid].startSeconds);
   }
 }
@@ -52,6 +55,8 @@ function vidRescale(){
     $('.tv .screen').css({'left': -($('.tv .screen').outerWidth()-w)/2});
   }
 }
+
+$('.skip').css('opacity', '0');
 
 $(window).on('load resize', function(){
   vidRescale();
@@ -86,6 +91,7 @@ $('.hi span:last-of-type').on('click', function(){
 });
 
 setTimeout(function(){
+  if(game_key) return;
   skipvideo();
 }, vid[currVid].endMiliseconds);
 
