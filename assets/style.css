@@ -1006,14 +1006,15 @@ input[type=range]::-webkit-slider-thumb {
 #menu {
 	width: 1000px;
 	height: 580px;
-	background-image: url('img/2b.jpg');
-	display: block;
+	background-image: url('img/map.jpg');
+	display: none;
+	background-size: 1000px 700px;
 }
 
 #menu .back-menu {
 	width: 1000px;
 	height: 580px;
-	background-color: rgba(0,0,0,.8);
+	background-color: rgba(0,0,0,.9);
 	color: #fff;
 	padding: 100px;
 }
@@ -1184,7 +1185,8 @@ input[type=range]::-webkit-slider-thumb {
 #serverlist, #startgame {
 	width: 1000px;
 	height: 580px;
-	background-image: url('img/2b.jpg');
+	background-image: url('img/map.jpg');
+	background-size: 1000px 700px;
 	display: none;
 }
 
@@ -1879,7 +1881,7 @@ circle:hover {
 
 	color: #fff;
 
-	background: rgba(0,0,0,.8);
+	background: rgba(0,0,0,.9);
 }
 
 #video img {
