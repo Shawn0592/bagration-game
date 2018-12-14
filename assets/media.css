@@ -1,0 +1,131 @@
+@media only screen and (max-width: 550px), (min-device-width: 300px) and (max-device-width: 450px)  {
+	.skip {
+		left: 50%;
+		transform: translateX(-50%);
+		right: auto;
+		border-top-right-radius: 10px;
+	}
+
+	#menu {
+		width: auto;
+		height: 100vh;
+	}
+
+	#android .row {
+		width: 100%;
+		height: 100vh;
+		background-color: rgba(0,0,0,.9);
+		color: #fff;
+	}
+
+	.android-button {
+		background: rgb(139,195,126);
+		border: 1px solid rgba(0,0,0,.1);
+		border-bottom: 3px solid rgba(0,0,0,.1);
+		border-radius: 5px;
+		color: #fff;
+		transition: .5s;
+	}
+
+	.android-button div {
+		position: relative;
+		top: 50%;
+		transform: translateY(-50%);
+		text-align: center;
+	}
+
+	.android-button:hover {
+		background: rgba(139,195,126,.5);
+		cursor: pointer;
+	}
+
+	#serverlist-block .body, #startgame-block .body {
+		margin: 0;
+		padding: 0;
+		max-height: none;
+	}
+
+	#startgame .spec {
+		padding: 0;
+		margin-left: -0.5rem!important;
+		text-align: center;
+	}
+
+	img#belarus-map {
+		display: none;
+	}
+
+	#serverlist-block .header, #startgame-block .header {
+		padding: 15px;
+	}
+
+	#pc { display: none; }
+	#android { display: block; }
+	.media-text-center { text-align: center; }
+}
+
+@media only screen and (max-width: 750px) {
+	.skip {
+		left: 50%;
+		transform: translateX(-50%);
+		right: auto;
+		border-top-right-radius: 10px;
+	}
+
+	#menu {
+		width: auto;
+		height: 100vh;
+	}
+
+	#android .row {
+		width: 100%;
+		height: 100vh;
+		background-color: rgba(0,0,0,.9);
+		color: #fff;
+	}
+
+	.android-button {
+		background: rgb(139,195,126);
+		border: 1px solid rgba(0,0,0,.1);
+		border-bottom: 3px solid rgba(0,0,0,.1);
+		border-radius: 5px;
+		color: #fff;
+		transition: .5s;
+	}
+
+	.android-button div {
+		position: relative;
+		top: 50%;
+		transform: translateY(-50%);
+		text-align: center;
+	}
+
+	.android-button:hover {
+		background: rgba(139,195,126,.5);
+		cursor: pointer;
+	}
+
+	#serverlist-block .body, #startgame-block .body {
+		margin: 0;
+		padding: 0;
+		max-height: none;
+	}
+
+	#startgame .spec {
+		padding: 0;
+		margin-left: -0.5rem!important;
+		text-align: center;
+	}
+
+	img#belarus-map {
+		display: none;
+	}
+
+	#serverlist-block .header, #startgame-block .header {
+		padding: 15px;
+	}
+
+	#pc { display: none; }
+	#android { display: block; }
+	.media-text-center { text-align: center; }
+}

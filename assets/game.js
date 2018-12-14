@@ -45,7 +45,7 @@ socket.on('connect', function(data){
 	// 	});
 	// },'5.80');
 
-	$('#game').css('display','none');
+	$('#game').css('display', 'none');
 	$('#menu').css('display','none');
 	$('#startgame').css('display','none');
 	$('#serverlist').css('display','none');
@@ -2938,3 +2938,80 @@ function stopSpy(time){
 		spy_stopped = false;
 	}, time*1000);
 }
+
+var MAP = {
+	"scale": 10,
+	"scale_speed": .5,
+
+	"top": 13,
+	"left": 50,
+	"move_speed": 5,
+
+	"max": 100,
+	"min": -0
+};
+
+function map(param){
+	if(param == 'plus'){
+		var new_scale = (MAP.scale + MAP.scale_speed)/10;
+		document.getElementById('map').style.transform = "scale("+new_scale+") translateX(-50%)";
+
+		MAP.max = MAP.max + new_scale*2;
+		MAP.scale = new_scale*10;
+		document.getElementById('map').style.left = MAP.left+"%";
+	} else if(param == 'minus'){
+		var new_scale = (MAP.scale - MAP.scale_speed)/10;
+		document.getElementById('map').style.transform = "scale("+new_scale+") translateX(-50%)";
+
+		MAP.max = MAP.max + new_scale*2;
+		MAP.scale = new_scale*10;
+		document.getElementById('map').style.left = MAP.left+"%";
+	} else if(param == 'top'){
+		var new_move = MAP.top + MAP.move_speed;
+		if(new_move >= MAP.max) return;
+		if(new_move <= MAP.min) return;
+
+		document.getElementById('map').style.top = new_move+"%";
+		MAP.top = new_move;
+	} else if(param == 'left'){
+		var new_move = MAP.left + MAP.move_speed;
+		if(new_move >= MAP.max) return;
+		if(new_move <= MAP.min) return;
+
+		document.getElementById('map').style.left = new_move+"%";
+		MAP.left = new_move;
+	} else if(param == 'bottom'){
+		var new_move = MAP.top - MAP.move_speed;
+		if(new_move >= MAP.max) return;
+		if(new_move <= MAP.min) return;
+
+		document.getElementById('map').style.top = new_move+"%";
+		MAP.top = new_move;
+	} else if(param == 'right'){
+		var new_move = MAP.left - MAP.move_speed;
+		if(new_move >= MAP.max) return;
+		if(new_move <= MAP.min) return;
+
+		document.getElementById('map').style.left = new_move+"%";
+		MAP.left = new_move;
+	}
+}
+
+document.addEventListener('keydown',press)
+function press(e){
+	if (e.keyCode === 38 /* up */ || e.keyCode === 87 /* w */ || e.keyCode === 90 /* z */){
+		map('top');
+	}
+	if (e.keyCode === 39 /* right */ || e.keyCode === 68 /* d */){
+		map('right');
+	}
+	if (e.keyCode === 40 /* down */ || e.keyCode === 83 /* s */){
+		map('bottom');
+	}
+	if (e.keyCode === 37 /* left */ || e.keyCode === 65 /* a */ || e.keyCode === 81 /* q */){
+		map('left');
+	}
+}
+
+document.getElementById('game').onwheel = function(e){ if(e.deltaY > 0) { map('minus'); } else { map('plus'); } return false; }
+document.getElementById('spectator_game').onwheel = function(e){ if(e.deltaY > 0) { map('minus'); } else { map('plus'); } return false; }
