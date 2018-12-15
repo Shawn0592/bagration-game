@@ -473,7 +473,7 @@
 
 		<div class="blocker">
 			<div class="timer">
-				00:<label id="timer-time">00:00</label><br><br>
+				<label id="timer-time">00:00</label><br><br>
 				<p>до окончания призыва<br>призывников: <label id="timer-army" style="font-weight: 500;">59Т</label></p>
 			</div>
 		</div>
@@ -989,6 +989,10 @@
 					if(_progress > 98) clearInterval(int);
 					setProgress();
 				}, 100);
+
+				setTimeout(function(){
+					if($('#video').css('display') == 'block') alert('Отсутствует подключение к интернету')
+				}, 60000);
 			</script>
 
 			<div class="back-form"></div>
