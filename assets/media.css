@@ -59,6 +59,10 @@
 		padding: 15px;
 	}
 
+	.report {
+		display: none!important;
+	}
+
 	#pc { display: none; }
 	#android { display: block; }
 	.media-text-center { text-align: center; }
@@ -123,6 +127,10 @@
 
 	#serverlist-block .header, #startgame-block .header {
 		padding: 15px;
+	}
+
+	.report {
+		display: none!important;
 	}
 
 	#pc { display: none; }

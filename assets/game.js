@@ -2948,7 +2948,7 @@ var MAP = {
 	"move_speed": 5,
 
 	"max": 100,
-	"min": -0
+	"min": 0
 };
 
 function map(param){
