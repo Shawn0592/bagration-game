@@ -4,6 +4,8 @@
 		transform: translateX(-50%);
 		right: auto;
 		border-top-right-radius: 10px;
+
+		font-size: 8vw;
 	}
 
 	#menu {
@@ -66,6 +68,20 @@
 	#pc { display: none; }
 	#android { display: block; }
 	.media-text-center { text-align: center; }
+
+	body {
+		font-size: 2.5vw;
+		line-height: auto;
+	}
+
+	#video .logotype {
+		width: 30vw;
+	}
+
+	#video .account .avatar img {
+		width: 10vw;
+		height: 10vw;
+	}
 }
 
 @media only screen and (max-width: 750px) {
@@ -74,6 +90,8 @@
 		transform: translateX(-50%);
 		right: auto;
 		border-top-right-radius: 10px;
+
+		font-size: 8vw;
 	}
 
 	#menu {
@@ -136,4 +154,18 @@
 	#pc { display: none; }
 	#android { display: block; }
 	.media-text-center { text-align: center; }
+
+	body {
+		font-size: 2.5vw;
+		line-height: auto;
+	}
+
+	#video .logotype {
+		width: 30vw;
+	}
+
+	#video .account .avatar img {
+		width: 10vw;
+		height: 10vw;
+	}
 }
