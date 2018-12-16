@@ -327,7 +327,7 @@
 		</svg>
 
 		<div class="top-panel">
-			<div class="image"><img id="player_country_flag" src="assets/img/germany_reich.png" width="30" height="30"></div>
+			<div class="image"><img id="player_country_flag" src="assets/img/germany_reich.png"></div>
 			<div class="info">
 				<div class="top" id="player_country">Рейх</div>
 				<div class="bottom state_name" id="state_name">59 территорий</div>
@@ -900,10 +900,10 @@
 		</div>
 		<div id="android">
 			<div class="row">
-				<div class="col-md mx-5 my-2 mt-5 android-button" onclick="randomserver();"><div>Подключиться к случайному серверу</div></div>
-				<div class="col-md mx-5 my-2 android-button" onclick="to_serverlist();"><div>Список серверов</div></div>
-				<div class="col-md mx-5 my-2 android-button" onclick="to_createserver();"><div>Создать сервер</div></div>
-				<div class="col-md mx-5 my-2 mb-5 android-button"><div><del>Настройки игры</del></div></div>
+				<div class="mx-5 my-2 mt-5 android-button" onclick="randomserver();"><div>Подключиться к случайному серверу</div></div>
+				<div class="mx-5 my-2 android-button" onclick="to_serverlist();"><div>Список серверов</div></div>
+				<div class="mx-5 my-2 android-button" onclick="to_createserver();"><div>Создать сервер</div></div>
+				<div class="mx-5 my-2 mb-5 android-button"><div><del>Настройки игры</del></div></div>
 			</div>
 		</div>
 	</div>
@@ -911,33 +911,44 @@
 	<div id="startgame">
 		<div id="startgame-block">
 			<div class="header text-center clearfix">
-				<button class="btn btn-sm btn-outline-light float-left" style="font-size:10px;padding:3px 5px;margin-top:-3px;" onclick="to_menu();" id="startgame_tomenu"><b>Назад</b></button>
+				<button class="btn btn-sm btn-outline-light float-left" onclick="to_menu();" id="startgame_tomenu"><b>Назад</b></button>
 				Создать сервер
 				<div class="float-right">
-					 <div class="btn btn-sm btn-outline-light float-left" style="font-size:10px;padding:3px 5px;margin-top:-3px;"><b><label id="server-list_count1"></label> онлайн</b></div>
+					 <div class="btn btn-sm btn-outline-light float-left"><b><label id="server-list_count1"></label> онлайн</b></div>
 				</div>
 			</div>
 			<div class="body row">
 				<div class="p-3 row">
-					<div class="col-md-6 py-2">
-						<p style="font-size: 12px;">Выбор сложности игры - основной этап создания сервера. Если выбрать лёгкую сложность игры - игра пройдёт быстрее и легче, не будет различных событий, страны будут находиться на одном уровне развитий, останется только воевать. При выборе больших уровней сложности игрокам придётся самим расставлять дивизии, строить фабрики, покупать ресурсы у других стран.</p>
-						<div class="spec text-center my-4">
-							<div class="block-active"><img src="assets/img/classes/tank.png" width="30" height="30"></div>
-							<div class="block"><img src="assets/img/classes/plane.png" width="30" height="30"></div>
-							<div class="block"><img src="assets/img/classes/ship.png" width="30" height="30"></div>
-							<div class="block"><img src="assets/img/classes/bomb.png" width="30" height="30"></div>
-							<div class="block"><img src="assets/img/classes/bullet.png" width="30" height="30"></div>
-						</div><br><br>
-						<div class="text-center" style="width:100%;">
+					<div id="pc">
+						<div class="col-md-6 py-2">
+							<p style="font-size: 12px;">Выбор сложности игры - основной этап создания сервера. Если выбрать лёгкую сложность игры - игра пройдёт быстрее и легче, не будет различных событий, страны будут находиться на одном уровне развитий, останется только воевать. При выборе больших уровней сложности игрокам придётся самим расставлять дивизии, строить фабрики, покупать ресурсы у других стран.</p>
+							<div class="spec text-center my-4">
+								<div class="block-active"><img src="assets/img/classes/tank.png" width="30" height="30"></div>
+								<div class="block"><img src="assets/img/classes/plane.png" width="30" height="30"></div>
+								<div class="block"><img src="assets/img/classes/ship.png" width="30" height="30"></div>
+								<div class="block"><img src="assets/img/classes/bomb.png" width="30" height="30"></div>
+								<div class="block"><img src="assets/img/classes/bullet.png" width="30" height="30"></div>
+							</div><br><br>
+							<div class="text-center" style="width:100%;">
+								<b>Лёгкая сложность</b><br>
+								<p>У двух стран в начале игры построены фабрики и расставлены дивизии.</p>
+								<div id="createserverbutton">
+									<button class="btn btn-verydark" onclick="createserver();">Создать сервер</button>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<img id="belarus-map" src="assets/img/factory.png" width="400" height="250" style="position: absolute;left:50%;top:50%;transform: translate(-50%,-50%);">
+						</div>
+					</div>
+					<div id="android">
+						<div class="text-center" style="width:100%;font-size:5vw;padding:3vw;">
 							<b>Лёгкая сложность</b><br>
 							<p>У двух стран в начале игры построены фабрики и расставлены дивизии.</p>
 							<div id="createserverbutton">
-								<button class="btn btn-verydark" onclick="createserver();">Создать сервер</button>
+								<button style="font-size:4vw;padding:2vw 4vw;" class="btn btn-verydark" onclick="createserver();">Создать сервер</button>
 							</div>
 						</div>
-					</div>
-					<div class="col-md-6">
-						<img id="belarus-map" src="assets/img/factory.png" width="400" height="250" style="position: absolute;left:50%;top:50%;transform: translate(-50%,-50%);">
 					</div>
 				</div>
 			</div>
@@ -947,10 +958,10 @@
 	<div id="serverlist">
 		<div id="serverlist-block">
 			<div class="header text-center clearfix">
-				<button class="btn btn-sm btn-outline-light float-left" style="font-size:10px;padding:3px 5px;margin-top:-3px;" onclick="to_menu();"><b>Назад</b></button>
+				<button class="btn btn-sm btn-outline-light float-left" onclick="to_menu();"><b>Назад</b></button>
 				Список доступных серверов
 				<div class="float-right">
-					 <div class="btn btn-sm btn-outline-light float-left" style="font-size:10px;padding:3px 5px;margin-top:-3px;"><b><label id="server-list_count2"></label> онлайн</b></div>
+					<div class="btn btn-sm btn-outline-light float-left" style="font-size:10px;padding:3px 5px;margin-top:-3px;"><b><label id="server-list_count2"></label> онлайн</b></div>
 				</div>
 			</div>
 			<div class="body row" id="server-list"></div>
@@ -1004,7 +1015,7 @@
 			</div>
 			<div class="author media-text-center"><b>Dmitry Vansovich</b>, 2018-2019</div>
 
-			<div class="skip"><button class="btn btn-sm btn-outline-light float-left" style="font-size:16px;padding:3px 5px;border-width:2px;" onclick="skipvideo();"><b>Пропустить</b></button></div>
+			<div class="skip"><button class="btn btn-sm btn-outline-light float-left" onclick="skipvideo();"><b>Пропустить</b></button></div>
 			<div class="tv">
 				<div class="screen" id="tv"></div>
 			</div>
