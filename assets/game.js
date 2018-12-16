@@ -2313,7 +2313,7 @@ socket.on('server-list', function(data){
 					html = html +  `<div class="col-md-4 block">
 										<div class="block-header clearfix">
 											`+data.games[i].creator.first_name+` `+data.games[i].creator.last_name+`
-											<div class="block-button float-right" onclick="serverlist_connect(`+i+`);"><i class="fas fa-play"></i></div>
+											<div class="watch-button float-right" onclick="serverlist_connect(`+i+`);"><i class="fas fa-play"></i></div>
 										</div>
 										<div class="block-body">
 											<p>Статус: <b class="text-success">открыт</b></p>
@@ -2341,7 +2341,7 @@ socket.on('server-list', function(data){
 					html = html +  `<div class="col-md-4 block">
 										<div class="block-header clearfix">
 											`+data.games[i].creator.first_name+` `+data.games[i].creator.last_name+`
-											<div class="block-button float-right" onclick="serverlist_connect_closed(`+i+`);"><i class="fas fa-play"></i></div>
+											<div class="watch-button float-right" onclick="serverlist_connect_closed(`+i+`);"><i class="fas fa-play"></i></div>
 										</div>
 										<div class="block-body">
 											<p>Статус: <b class="text-success">открыт</b></p>
@@ -2943,25 +2943,25 @@ var MAP = {
 	"scale": 10,
 	"scale_speed": .5,
 
-	"top": 13,
+	"top": 50,
 	"left": 50,
 	"move_speed": 5,
 
-	"max": 100,
-	"min": 0
+	"max": 1000,
+	"min": -1000
 };
 
 function map(param){
 	if(param == 'plus'){
 		var new_scale = (MAP.scale + MAP.scale_speed)/10;
-		document.getElementById('map').style.transform = "scale("+new_scale+") translateX(-50%)";
+		document.getElementById('map').style.transform = "scale("+new_scale+") translate(-50%, -50%)";
 
 		MAP.max = MAP.max + new_scale*2;
 		MAP.scale = new_scale*10;
 		document.getElementById('map').style.left = MAP.left+"%";
 	} else if(param == 'minus'){
 		var new_scale = (MAP.scale - MAP.scale_speed)/10;
-		document.getElementById('map').style.transform = "scale("+new_scale+") translateX(-50%)";
+		document.getElementById('map').style.transform = "scale("+new_scale+") translate(-50%, -50%)";
 
 		MAP.max = MAP.max + new_scale*2;
 		MAP.scale = new_scale*10;

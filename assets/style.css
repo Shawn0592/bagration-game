@@ -48,7 +48,9 @@ body {
 
 .bottom_menu, .getArmy, .deleteArmy, .move {
 	position: absolute;
-	right: 0;
+	right: none;
+	left: 50%;
+	transform: translateX(-50%);
 	bottom: 0;
 	float: left;
 	display: none;
@@ -195,8 +197,8 @@ i:hover {
     display: none;
     position: fixed;
     left: 50%;
-    top: 13%;
-    transform: scale(1, 1) translateX(-50%);
+    top: 50%;
+    transform: scale(1, 1) translate(-50%, -50%);
 }
 #map .state_player1 {
     cursor: pointer;
@@ -1340,6 +1342,7 @@ circle:hover {
 
 .army {
 	background-color: rgba(34,34,34,.8);
+	border: 2px solid rgba(255,255,255,.1);
 	color: #fff;
 	border-radius: 3px;
 	padding: 2px 4px;
@@ -2011,11 +2014,12 @@ b {
 
 #keyboard .scale {
 	margin-top: 5px;
+	text-align: center;
 }
 
 #keyboard .scale div {
 	padding: 0.2em;
-	width: calc(50% - 1.8px);
+	width: calc(50% - 10px);
 	height: 2em;
 	text-align: center;
 	border-radius: 3px;
@@ -2032,4 +2036,15 @@ b {
 	background-color: #f1f1f1;
 	color: #222;
 	cursor: pointer;
+}
+
+.header button {
+	font-size:10px;
+	padding:3px 5px;
+	margin-top:-3px;
+}
+
+.top-panel .image img {
+	width: 30px;
+	height: 30px;
 }

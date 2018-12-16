@@ -26,11 +26,28 @@
 
 	.android-button {
 		background: rgb(139,195,126);
-		border: 1px solid rgba(0,0,0,.1);
-		border-bottom: 3px solid rgba(0,0,0,.1);
-		border-radius: 5px;
+		border: 1vw solid rgba(0,0,0,.1);
+		border-bottom: 3vw solid rgba(0,0,0,.1);
+		border-radius: 1.5vw;
 		color: #fff;
 		transition: .5s;
+
+		font-size: 6vw;
+		width: 100%;
+
+		margin: 2vw 10vw!important;
+	}
+
+	.android-button:nth-of-type(1){
+		margin-top: 15vw!important;
+	}
+
+	.chat {
+		display: none;
+	}
+
+	.android-button:nth-of-type(4){
+		margin-bottom: 15vw!important;
 	}
 
 	.android-button div {
@@ -65,7 +82,7 @@
 		padding: 15px;
 	}
 
-	.report {
+	.two-buttons-group {
 		display: none!important;
 	}
 
@@ -73,18 +90,229 @@
 	#android { display: block; }
 	.media-text-center { text-align: center; }
 
-	body {
-		font-size: 2.5vw;
-		line-height: auto;
-	}
-
 	#video .logotype {
-		width: 30vw;
+		width: 20vh;
 	}
 
 	#video .account .avatar img {
-		width: 10vw;
-		height: 10vw;
+		width: 6vh;
+		height: 6vh;
+	}
+
+	#video .account {
+		font-size: 4vw;
+		line-height: 4vw;
+	}
+
+	.skip button {
+		font-size: 5vw;
+		border-width: 0.7vw;
+		padding: 3vw 5vw;
+	}
+
+	.header {
+		font-size: 5vw;
+	}
+
+	.header button {
+		font-size: 4vw;
+		padding: 1vw 3vw;
+		border: .3vw solid #fff;
+	}
+
+	.header .float-right {
+		display: none;
+	}
+
+	#serverlist-block .body .col-md-4 {
+		max-width: 100%;
+		width: 100%;
+		flex: 0 0 100%;
+		padding: 2vw;
+		font-size: 4vw;
+	}
+
+	#serverlist-block .body .block .block-body {
+		padding: 2vw;
+		border: .2vw solid #e3e4e8;
+	}
+
+	#serverlist-block .body .block .block-header {
+		padding: 4vw;
+	}
+
+	#video {
+		font-size: 4vw;
+		line-height: 4vw;
+	}
+
+	.progressbar-back {
+		height: 5vh!important;
+	}
+
+	.progressbar {
+		height: 5vh!important;
+		line-height: 5vh;
+	}
+
+	#video .account .body {
+		line-height: 4vw;
+		top: 2vw;
+	}
+
+	#keyboard {
+		font-size: 4vw;
+	}
+
+	.chat .chat-button {
+		padding-left: 2vw!important;
+		padding-right: 2vw!important;
+		padding-top: 2vw!important;
+		padding-bottom: 2vw!important;
+	}
+
+	.chat .chat-button img {
+		width: 4vw;
+		height: 4vw;
+	}
+
+	.popup .container .body {
+		padding: 4vw;
+		font-size: 4vw;
+	}
+
+	.popup .container .buttons .button1, .popup .container .buttons .button2 {
+		font-size: 4vw;
+	}
+
+	.blocker .timer {
+		font-size: 18vw;
+		line-height: 4vw;
+	}
+
+	.blocker .timer p {
+		font-size: 4vw;
+	}
+
+	.top-panel .image {
+		padding: 1vw 2vw;
+		width: auto;
+	}
+
+	.top-panel .info {
+		margin-left: -1px;
+		width: 26vw!important;
+		line-height: 3vw!important;
+		height: auto;
+		font-size: auto;
+	}
+
+	.top-panel .info .top {
+		font-size: 4vw!important;
+		padding-top: 1vh!important;
+	}
+
+	.top-panel .info .bottom {
+		font-size: 3vw!important;
+	}
+
+	.flag_teh, .flag_ecom, .flag_fac, .flag_boo {
+		display: none;
+	}
+
+	.top-panel {
+		height: auto!important;
+	}
+
+	.top-panel .image img {
+		width: 8vw!important;
+		height: 8vw!important;
+	}
+
+	.top-panel .peoples {
+		right: 1vw!important;
+		top: 1vw!important;
+
+		width: auto;
+		padding: 1.5vw;
+		border-radius: 1vw;
+	}
+
+	.top-panel .peoples img {
+		width: 8vw;
+		height: 8vw;
+	}
+
+	.top-panel .logs {
+		display: none;
+	}
+
+	.right-panel {
+		width: 70vw!important;
+		font-size: 4vw;
+	}
+
+	.right-panel .header {
+		font-size: 4vw;
+		margin-top: -2px;
+		padding: 2vw;
+	}
+
+	.right-panel .header .image {
+		width: auto;
+		padding: 1vw 1vw;
+	}
+
+	.right-panel .header .image img {
+		width: 8vw;
+		height: 8vw;
+	}
+
+	.right-panel .header .info {
+		width: 26vw;
+		height: auto;
+		font-size: auto;
+		margin-left: 1vw;
+		line-height: 4vw;
+	}
+
+	.right-panel .header .info .top {
+		font-size: 4vw;
+		padding-top: 1vw;
+	}
+
+	.right-panel .header .info .bottom {
+		top: -6px;
+		font-size: 3vw;
+	}
+
+	.right-panel .body {
+		padding: 2vw;
+		margin-top: -2px;
+	}
+
+	.right-panel .button img {
+		margin: 1vw;
+		height: 6vw;
+		width: 6vw;
+	}
+
+	.move {
+		right: none;
+		left: 50%;
+		transform: translateX(-50%);
+		font-size: 5vw;
+	}
+
+	.move div {
+		display: block;
+		margin: 1vw 7vw;
+		padding: 2vw;
+		text-align: center;
+	}
+
+	.news-images {
+		display: none;
 	}
 }
 
@@ -116,11 +344,28 @@
 
 	.android-button {
 		background: rgb(139,195,126);
-		border: 1px solid rgba(0,0,0,.1);
-		border-bottom: 3px solid rgba(0,0,0,.1);
-		border-radius: 5px;
+		border: 1vw solid rgba(0,0,0,.1);
+		border-bottom: 3vw solid rgba(0,0,0,.1);
+		border-radius: 1.5vw;
 		color: #fff;
 		transition: .5s;
+
+		font-size: 6vw;
+		width: 100%;
+
+		margin: 2vw 10vw!important;
+	}
+
+	.android-button:nth-of-type(1){
+		margin-top: 15vw!important;
+	}
+
+	.chat {
+		display: none;
+	}
+
+	.android-button:nth-of-type(4){
+		margin-bottom: 15vw!important;
 	}
 
 	.android-button div {
@@ -155,7 +400,7 @@
 		padding: 15px;
 	}
 
-	.report {
+	.two-buttons-group {
 		display: none!important;
 	}
 
@@ -163,17 +408,228 @@
 	#android { display: block; }
 	.media-text-center { text-align: center; }
 
-	body {
-		font-size: 2.5vw;
-		line-height: auto;
-	}
-
 	#video .logotype {
-		width: 30vw;
+		width: 20vh;
 	}
 
 	#video .account .avatar img {
-		width: 10vw;
-		height: 10vw;
+		width: 6vh;
+		height: 6vh;
+	}
+
+	#video .account {
+		font-size: 4vw;
+		line-height: 4vw;
+	}
+
+	.skip button {
+		font-size: 5vw;
+		border-width: 0.7vw;
+		padding: 3vw 5vw;
+	}
+
+	.header {
+		font-size: 5vw;
+	}
+
+	.header button {
+		font-size: 4vw;
+		padding: 1vw 3vw;
+		border: .3vw solid #fff;
+	}
+
+	.header .float-right {
+		display: none;
+	}
+
+	#serverlist-block .body .col-md-4 {
+		max-width: 100%;
+		width: 100%;
+		flex: 0 0 100%;
+		padding: 2vw;
+		font-size: 4vw;
+	}
+
+	#serverlist-block .body .block .block-body {
+		padding: 2vw;
+		border: .2vw solid #e3e4e8;
+	}
+
+	#serverlist-block .body .block .block-header {
+		padding: 4vw;
+	}
+
+	#video {
+		font-size: 4vw;
+		line-height: 4vw;
+	}
+
+	.progressbar-back {
+		height: 5vh!important;
+	}
+
+	.progressbar {
+		height: 5vh!important;
+		line-height: 5vh;
+	}
+
+	#video .account .body {
+		line-height: 4vw;
+		top: 2vw;
+	}
+
+	#keyboard {
+		font-size: 4vw;
+	}
+
+	.chat .chat-button {
+		padding-left: 2vw!important;
+		padding-right: 2vw!important;
+		padding-top: 2vw!important;
+		padding-bottom: 2vw!important;
+	}
+
+	.chat .chat-button img {
+		width: 4vw;
+		height: 4vw;
+	}
+
+	.popup .container .body {
+		padding: 4vw;
+		font-size: 4vw;
+	}
+
+	.popup .container .buttons .button1, .popup .container .buttons .button2 {
+		font-size: 4vw;
+	}
+
+	.blocker .timer {
+		font-size: 24vw;
+		line-height: 4vw;
+	}
+
+	.blocker .timer p {
+		font-size: 4vw;
+	}
+
+	.top-panel .image {
+		padding: 1vw 2vw;
+		width: auto;
+	}
+
+	.top-panel .info {
+		margin-left: -1px;
+		width: 26vw!important;
+		line-height: 3vw!important;
+		height: auto;
+		font-size: auto;
+	}
+
+	.top-panel .info .top {
+		font-size: 4vw!important;
+		padding-top: 1vh!important;
+	}
+
+	.top-panel .info .bottom {
+		font-size: 3vw!important;
+	}
+
+	.flag_teh, .flag_ecom, .flag_fac, .flag_boo {
+		display: none;
+	}
+
+	.top-panel {
+		height: auto!important;
+	}
+
+	.top-panel .image img {
+		width: 8vw!important;
+		height: 8vw!important;
+	}
+
+	.top-panel .peoples {
+		right: 1vw!important;
+		top: 1vw!important;
+
+		width: auto;
+		padding: 1.5vw;
+		border-radius: 1vw;
+	}
+
+	.top-panel .peoples img {
+		width: 8vw;
+		height: 8vw;
+	}
+
+	.top-panel .logs {
+		display: none;
+	}
+
+	.right-panel {
+		width: 70vw!important;
+		font-size: 4vw;
+	}
+
+	.right-panel .header {
+		font-size: 4vw;
+		margin-top: -2px;
+		padding: 2vw;
+	}
+
+	.right-panel .header .image {
+		width: auto;
+		padding: 1vw 1vw;
+	}
+
+	.right-panel .header .image img {
+		width: 8vw;
+		height: 8vw;
+	}
+
+	.right-panel .header .info {
+		width: 26vw;
+		height: auto;
+		font-size: auto;
+		margin-left: 1vw;
+		line-height: 4vw;
+	}
+
+	.right-panel .header .info .top {
+		font-size: 4vw;
+		padding-top: 1vw;
+	}
+
+	.right-panel .header .info .bottom {
+		top: -6px;
+		font-size: 3vw;
+	}
+
+	.right-panel .body {
+		padding: 2vw;
+		margin-top: -2px;
+	}
+
+	.right-panel .button img {
+		margin: 1vw;
+		height: 6vw;
+		width: 6vw;
+	}
+
+	.move {
+		right: none;
+		left: 50%;
+		transform: translateX(-50%);
+		font-size: 5vw;
+	}
+
+	.move div {
+		display: block;
+		margin: 1vw 7vw;
+		padding: 2vw;
+		text-align: center;
+	}
+
+	.news-images {
+		display: none;
 	}
 }
