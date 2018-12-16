@@ -8,6 +8,10 @@
 		font-size: 8vw;
 	}
 
+	.acoount .body p {
+		margin-top: 2vw;
+	}
+
 	#menu {
 		width: 100vw;
 		height: 100vh;
@@ -92,6 +96,10 @@
 		border-top-right-radius: 10px;
 
 		font-size: 8vw;
+	}
+
+	.acoount .body p {
+		margin-top: 2vw;
 	}
 
 	#menu {
