@@ -2048,3 +2048,14 @@ b {
 	width: 30px;
 	height: 30px;
 }
+
+.line {
+  stroke-dasharray: 5;
+  animation: dash 25s linear;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 500;
+  }
+}

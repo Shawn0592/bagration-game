@@ -1578,6 +1578,13 @@ function click(state){
 				}
 			}
 
+			document.getElementById('border').innerHTML = `
+			<line class="line" style="stroke-width:3;stroke:#f1f1f1;" 
+			x1="${getCentroid(getPoints(selected_state_movefrom))[0]}"
+			y1="${getCentroid(getPoints(selected_state_movefrom))[1]}"
+			x2="${getCentroid(getPoints(state+'-raion'))[0]}"
+			y2="${getCentroid(getPoints(state+'-raion'))[1]}"
+			></line>`;
 			//setBorder(state+'-raion',selected_state_movefrom);
 
 			$('.bottom_menu').css('display','none');
@@ -1694,6 +1701,8 @@ function show_anon(){
 // }
 
 function updateStates(){
+	document.getElementById('border').innerHTML = ``;
+
 	let states = document.getElementsByTagName('polygon');
 	let enemyplayer;
 
@@ -3015,3 +3024,24 @@ function press(e){
 
 document.getElementById('game').onwheel = function(e){ if(e.deltaY > 0) { map('minus'); } else { map('plus'); } return false; }
 document.getElementById('spectator_game').onwheel = function(e){ if(e.deltaY > 0) { map('minus'); } else { map('plus'); } return false; }
+
+var getCentroid = function (coord) 
+{
+	var center = coord.reduce(function (x,y) {
+		return [x[0] + y[0]/coord.length, x[1] + y[1]/coord.length] 
+	}, [0,0])
+	return center;
+}
+
+var getPoints = element => {
+	var el = document.getElementById(element);
+	var _points = el.points;
+	var points = [];
+
+	for(var i = 0; i < _points.length; i++){
+		// points.push(`${_points[i].x},${_points[i].y}`);
+		points.push([_points[i].x, _points[i].y]);
+	}
+
+	return points;
+}
