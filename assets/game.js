@@ -1580,10 +1580,10 @@ function click(state){
 
 			document.getElementById('border').innerHTML = `
 			<line class="line" style="stroke-width:3;stroke:#f1f1f1;" 
-			x1="${getCentroid(getPoints(selected_state_movefrom))[0]}"
-			y1="${getCentroid(getPoints(selected_state_movefrom))[1]}"
-			x2="${getCentroid(getPoints(state+'-raion'))[0]}"
-			y2="${getCentroid(getPoints(state+'-raion'))[1]}"
+			x2="${getCentroid(getPoints(selected_state_movefrom))[0]}"
+			y2="${getCentroid(getPoints(selected_state_movefrom))[1]}"
+			x1="${getCentroid(getPoints(state+'-raion'))[0]}"
+			y1="${getCentroid(getPoints(state+'-raion'))[1]}"
 			></line>`;
 			//setBorder(state+'-raion',selected_state_movefrom);
 
