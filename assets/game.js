@@ -1452,6 +1452,9 @@ function click(state){
 
 			selected_state = state;
 
+			console.log('Center: '+getCentroid(getPoints(state+'-raion')));
+			MAP.scale = 25;
+			map('plus');
 			document.getElementById(state+'-raion').style.opacity = '1';
 
 			$('.bottom_menu').css('display','none');
@@ -2961,16 +2964,16 @@ var MAP = {
 };
 
 function map(param){
-	if(param == 'plus'){
+	if(param == 'plus' && MAP.scale >= 10){
 		var new_scale = (MAP.scale + MAP.scale_speed)/10;
-		document.getElementById('map').style.transform = "scale("+new_scale+") translate(-50%, -50%)";
+		document.getElementById('map').style.transform = "scale("+new_scale+")";
 
 		MAP.max = MAP.max + new_scale*2;
 		MAP.scale = new_scale*10;
 		document.getElementById('map').style.left = MAP.left+"%";
 	} else if(param == 'minus'){
 		var new_scale = (MAP.scale - MAP.scale_speed)/10;
-		document.getElementById('map').style.transform = "scale("+new_scale+") translate(-50%, -50%)";
+		document.getElementById('map').style.transform = "scale("+new_scale+")";
 
 		MAP.max = MAP.max + new_scale*2;
 		MAP.scale = new_scale*10;
