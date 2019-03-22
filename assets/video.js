@@ -73,8 +73,8 @@ $('.hi span:first-of-type').on('click', function(){
 });
 
 function skipvideo(){
-  tv.pauseVideo();
-  tv.mute();
+  //tv.pauseVideo();
+  //tv.mute();
 
   $('#game').css('display','none');
   $('#menu').css('display','block');
