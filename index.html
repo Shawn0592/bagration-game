@@ -13,6 +13,7 @@
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,600,700%7COpen+Sans:300,400,400italic,600,700">
     <link rel="stylesheet" href="https://code.cdn.mozilla.net/fonts/fira.css">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet">
 
 	<!-- Иконки -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
@@ -24,7 +25,7 @@
 <body>
 	<audio src="assets/music/click.mp3"></audio>
 	<div id="game">
-		<svg id="map" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="460" height="465" style="display: inline;">
+		<svg id="map" xmlns="http://www.w3.org/2000/svg" width="460" height="465" style="display: inline;">
 			<pattern id="player2_flag" patternUnits="userSpaceOnUse" width="15" height="25"><image xlink:href="assets/img/germany_reich.png" width="15" height="15" /></pattern>
 			<pattern id="player1_flag" patternUnits="userSpaceOnUse" width="15" height="25"><image xlink:href="assets/img/ussr.png" width="15" height="15" /></pattern>
 			<g class="mapScale">
@@ -185,166 +186,252 @@
 
 				<g id="border"></g>
 
-				<foreignobject x="135" y="280"><div class="army" id="baranavitski-raion-army"><img src="assets/img/germany_reich.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="145" y="320"><div class="army" id="liahavitski-raion-army"><img src="assets/img/germany_reich.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="165" y="340"><div class="army" id="hantsavitski-raion-army"><img src="assets/img/germany_reich.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="195" y="375"><div class="army" id="luninetski-raion-army"><img src="assets/img/germany_reich.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="205" y="410"><div class="army" id="stolinski-raion-army"><img src="assets/img/germany_reich.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="155" y="370"><div class="army" id="pinski-raion-army"><img src="assets/img/germany_reich.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="120" y="335"><div class="army" id="ivatsevichski-raion-army"><img src="assets/img/germany_reich.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="115" y="395"><div class="army" id="ivanauski-raion-army"><img src="assets/img/germany_reich.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="85" y="355"><div class="army" id="biarozauski-raion-army"><img src="assets/img/germany_reich.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="45" y="345"><div class="army" id="pruzhanski-raion-army"><img src="assets/img/germany_reich.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="10" y="360"><div class="army" id="kamianetski-raion-army"><img src="assets/img/germany_reich.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="10" y="405"><div class="army" id="brestski-raion-army"><img src="assets/img/germany_reich.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="30" y="390"><div class="army" id="zhabinkauski-raion-army"><img src="assets/img/germany_reich.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="35" y="420"><div class="army" id="malarytski-raion-army"><img src="assets/img/germany_reich.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="55" y="375"><div class="army" id="kobrynski-raion-army"><img src="assets/img/germany_reich.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="90" y="380"><div class="army" id="drahichynski-raion-army"><img src="assets/img/germany_reich.png"><b id="army-text">0Т</b></div></foreignobject>
+				<foreignObject width="50" height="25" width="50" height="25" x="135" y="280"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="baranavitski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="145" y="320"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="liahavitski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="165" y="340"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="hantsavitski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="195" y="375"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="luninetski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="205" y="410"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="stolinski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="155" y="370"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="pinski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="120" y="335"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="ivatsevichski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="115" y="395"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="ivanauski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="85" y="355"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="biarozauski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="45" y="345"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="pruzhanski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="10" y="360"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="kamianetski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="10" y="405"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="brestski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="30" y="390"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="zhabinkauski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="35" y="420"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="malarytski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="55" y="375"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="kobrynski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="90" y="380"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="drahichynski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
 
-				<foreignobject x="220" y="340"><div class="army" id="salihorski-raion-army"><img src="assets/img/germany_reich.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="250" y="330"><div class="army" id="liubanski-raion-army"><img src="assets/img/germany_reich.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="260" y="305"><div class="army" id="staradarozhski-raion-army"><img src="assets/img/germany_reich.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="250" y="265"><div class="army" id="puhavitski-raion-army"><img src="assets/img/ussr.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="270" y="240"><div class="army" id="chervenski-raion-army"><img src="assets/img/ussr.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="310" y="230"><div class="army" id="biarezinski-raion-army"><img src="assets/img/ussr.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="310" y="170"><div class="army" id="krupski-raion-army"><img src="assets/img/ussr.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="280" y="185"><div class="army" id="barysauski-raion-army"><img src="assets/img/ussr.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="260" y="215"><div class="army" id="smaliavitski-raion-army"><img src="assets/img/ussr.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="240" y="175"><div class="army" id="lagoiski-raion-army"><img src="assets/img/ussr.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="195" y="135"><div class="army" id="miadzelski-raion-army"><img src="assets/img/ussr.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="200" y="165"><div class="army" id="vileiski-raion-army"><img src="assets/img/ussr.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="190" y="190"><div class="army" id="maladzechanski-raion-army"><img src="assets/img/ussr.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="220" y="205"><div class="army" id="minski-raion-army"><img src="assets/img/ussr.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="180" y="215"><div class="army" id="valozhynski-raion-army"><img src="assets/img/germany_reich.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="175" y="235"><div class="army" id="staubtsouski-raion-army"><img src="assets/img/germany_reich.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="205" y="240"><div class="army" id="dziarzhynski-raion-army"><img src="assets/img/germany_reich.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="210" y="265"><div class="army" id="uzdzenski-raion-army"><img src="assets/img/germany_reich.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="220" y="305"><div class="army" id="slutski-raion-army"><img src="assets/img/germany_reich.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="205" y="290"><div class="army" id="kapylski-raion-army"><img src="assets/img/germany_reich.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="170" y="285"><div class="army" id="niasvizhski-raion-army"><img src="assets/img/germany_reich.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="170" y="310"><div class="army" id="kletski-raion-army"><img src="assets/img/germany_reich.png"><b id="army-text">0Т</b></div></foreignobject>
+				<foreignObject width="50" height="25" x="220" y="340"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="salihorski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="250" y="330"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="liubanski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="260" y="305"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="staradarozhski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="250" y="265"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="puhavitski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="270" y="240"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="chervenski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="310" y="230"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="biarezinski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="310" y="170"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="krupski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="280" y="185"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="barysauski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="260" y="215"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="smaliavitski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="240" y="175"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="lagoiski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="195" y="135"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="miadzelski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="200" y="165"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="vileiski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="190" y="190"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="maladzechanski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="220" y="205"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="minski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="180" y="215"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="valozhynski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="175" y="235"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="staubtsouski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="205" y="240"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="dziarzhynski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="210" y="265"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="uzdzenski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="220" y="305"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="slutski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="205" y="290"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="kapylski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="170" y="285"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="niasvizhski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="170" y="310"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="kletski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
 				
-				<foreignobject x="30" y="228"><div class="army" id="hrodzenski-raion-army"><img src="assets/img/germany_reich.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="25" y="282"><div class="army" id="berastavitski-raion-army"><img src="assets/img/germany_reich.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="50" y="290"><div class="army" id="vaukavyski-raion-army"><img src="assets/img/germany_reich.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="65" y="270"><div class="army" id="mastouski-raion-army"><img src="assets/img/germany_reich.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="80" y="291"><div class="army" id="zelvenski-raion-army"><img src="assets/img/germany_reich.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="40" y="315"><div class="army" id="svislatski-raion-army"><img src="assets/img/germany_reich.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="97" y="303"><div class="army" id="slonimski-raion-army"><img src="assets/img/germany_reich.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="104" y="267"><div class="army" id="dziatlauski-raion-army"><img src="assets/img/germany_reich.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="65" y="245"><div class="army" id="shchuchynski-raion-army"><img src="assets/img/germany_reich.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="90" y="205"><div class="army" id="voranauski-raion-army"><img src="assets/img/germany_reich.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="95" y="235"><div class="army" id="lidski-raion-army"><img src="assets/img/germany_reich.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="130" y="240"><div class="army" id="navagrudski-raion-army"><img src="assets/img/germany_reich.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="150" y="260"><div class="army" id="karelitski-raion-army"><img src="assets/img/germany_reich.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="130" y="210"><div class="army" id="iueuski-raion-army"><img src="assets/img/germany_reich.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="130" y="175"><div class="army" id="ashmianski-raion-army"><img src="assets/img/germany_reich.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="157" y="165"><div class="army" id="smargonski-raion-army"><img src="assets/img/germany_reich.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="135" y="140"><div class="army" id="astravetski-raion-army"><img src="assets/img/germany_reich.png"><b id="army-text">0Т</b></div></foreignobject>
+				<foreignObject width="50" height="25" x="30" y="228"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="hrodzenski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="25" y="282"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="berastavitski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="50" y="290"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="vaukavyski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="65" y="270"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="mastouski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="80" y="291"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="zelvenski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="40" y="315"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="svislatski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="97" y="303"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="slonimski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="104" y="267"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="dziatlauski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="65" y="245"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="shchuchynski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="90" y="205"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="voranauski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="95" y="235"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="lidski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="130" y="240"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="navagrudski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="150" y="260"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="karelitski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="130" y="210"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="iueuski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="130" y="175"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="ashmianski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="157" y="165"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="smargonski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="135" y="140"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="astravetski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
 				
-				<foreignobject x="185" y="110"><div class="army" id="pastauski-raion-army"><img src="assets/img/ussr.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="190" y="60"><div class="army" id="braslauski-raion-army"><img src="assets/img/ussr.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="230" y="80"><div class="army" id="sharkaushchynski-raion-army"><img src="assets/img/ussr.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="245" y="130"><div class="army" id="dokshytski-raion-army"><img src="assets/img/ussr.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="245" y="100"><div class="army" id="hlybotski-raion-army"><img src="assets/img/ussr.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="240" y="60"><div class="army" id="miorski-raion-army"><img src="assets/img/ussr.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="250" y="33"><div class="army" id="verhniadzvinski-raion-army"><img src="assets/img/ussr.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="285" y="135"><div class="army" id="lepelski-raion-army"><img src="assets/img/ussr.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="315" y="143"><div class="army" id="chashnitski-raion-army"><img src="assets/img/ussr.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="355" y="170"><div class="army" id="talachynski-raion-army"><img src="assets/img/ussr.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="382" y="160"><div class="army" id="arshanski-raion-army"><img src="assets/img/ussr.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="412" y="152"><div class="army" id="dubrovenski-raion-army"><img src="assets/img/ussr.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="362" y="132"><div class="army" id="sennenski-raion-army"><img src="assets/img/ussr.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="402" y="117"><div class="army" id="lioznenski-raion-army"><img src="assets/img/ussr.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="388" y="90"><div class="army" id="vitsebski-raion-army"><img src="assets/img/ussr.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="338" y="115"><div class="army" id="beshankovitski-raion-army"><img src="assets/img/ussr.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="338" y="90"><div class="army" id="shumilinski-raion-army"><img src="assets/img/ussr.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="295" y="100"><div class="army" id="ushatski-raion-army"><img src="assets/img/ussr.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="310" y="60"><div class="army" id="polatski-raion-army"><img src="assets/img/ussr.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="370" y="60"><div class="army" id="haradotski-raion-army"><img src="assets/img/ussr.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="300" y="35"><div class="army" id="rasonski-raion-army"><img src="assets/img/ussr.png"><b id="army-text">0Т</b></div></foreignobject>
+				<foreignObject width="50" height="25" x="185" y="110"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="pastauski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="190" y="60"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="braslauski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="230" y="80"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="sharkaushchynski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="245" y="130"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="dokshytski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="245" y="100"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="hlybotski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="240" y="60"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="miorski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="250" y="33"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="verhniadzvinski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="285" y="135"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="lepelski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="315" y="143"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="chashnitski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="355" y="170"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="talachynski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="382" y="160"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="arshanski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="412" y="152"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="dubrovenski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="362" y="132"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="sennenski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="402" y="117"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="lioznenski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="388" y="90"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="vitsebski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="338" y="115"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="beshankovitski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="338" y="90"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="shumilinski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="295" y="100"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="ushatski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="310" y="60"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="polatski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="370" y="60"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="haradotski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="300" y="35"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="rasonski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
 
-				<foreignobject x="420" y="185"><div class="army" id="horatski-raion-army"><img src="assets/img/ussr.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="450" y="214"><div class="army" id="drybinski-raion-army"><img src="assets/img/ussr.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="420" y="204"><div class="army" id="mstsislauski-raion-army"><img src="assets/img/ussr.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="385" y="197"><div class="army" id="shklouski-raion-army"><img src="assets/img/ussr.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="350" y="193"><div class="army" id="kruhlianski-raion-army"><img src="assets/img/ussr.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="348" y="215"><div class="army" id="bialynitski-raion-army"><img src="assets/img/ussr.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="333" y="250"><div class="army" id="klichauski-raion-army"><img src="assets/img/ussr.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="288" y="275"><div class="army" id="asipovitski-raion-army"><img src="assets/img/ussr.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="287" y="317"><div class="army" id="hluski-raion-army"><img src="assets/img/germany_reich.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="320" y="305"><div class="army" id="babruiski-raion-army"><img src="assets/img/ussr.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="335" y="280"><div class="army" id="kirauski-raion-army"><img src="assets/img/ussr.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="380" y="260"><div class="army" id="byhauski-raion-army"><img src="assets/img/ussr.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="377" y="233"><div class="army" id="mahiliouski-raion-army"><img src="assets/img/ussr.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="417" y="227"><div class="army" id="chavuski-raion-army"><img src="assets/img/ussr.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="440" y="253"><div class="army" id="cherykauski-raion-army"><img src="assets/img/ussr.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="453" y="237"><div class="army" id="krychauski-raion-army"><img src="assets/img/ussr.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="480" y="247"><div class="army" id="klimavitski-raion-army"><img src="assets/img/ussr.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="500" y="267"><div class="army" id="khotsimski-raion-army"><img src="assets/img/ussr.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="475" y="285"><div class="army" id="kastsiukovitski-raion-army"><img src="assets/img/ussr.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="444" y="275"><div class="army" id="krasnapolski-raion-army"><img src="assets/img/ussr.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="412" y="265"><div class="army" id="slauharadski-raion-army"><img src="assets/img/ussr.png"><b id="army-text">0Т</b></div></foreignobject>
+				<foreignObject width="50" height="25" x="420" y="185"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="horatski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="450" y="214"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="drybinski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="420" y="204"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="mstsislauski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="385" y="197"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="shklouski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="350" y="193"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="kruhlianski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="348" y="215"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="bialynitski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="333" y="250"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="klichauski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="288" y="275"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="asipovitski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="287" y="317"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="hluski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="320" y="305"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="babruiski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="335" y="280"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="kirauski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="380" y="260"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="byhauski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="377" y="233"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="mahiliouski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="417" y="227"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="chavuski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="440" y="253"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="cherykauski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="453" y="237"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="krychauski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="480" y="247"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="klimavitski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="500" y="267"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="khotsimski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="475" y="285"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="kastsiukovitski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="444" y="275"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="krasnapolski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="412" y="265"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="slauharadski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
 
-				<foreignobject x="412" y="295"><div class="army" id="karmianski-raion-army"><img src="assets/img/ussr.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="420" y="313"><div class="army" id="chacherski-raion-army"><img src="assets/img/ussr.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="372" y="300"><div class="army" id="rahachouski-raion-army"><img src="assets/img/ussr.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="362" y="325"><div class="army" id="zhlobinski-raion-army"><img src="assets/img/ussr.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="340" y="350"><div class="army" id="svetlahorski-raion-army"><img src="assets/img/ussr.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="300" y="345"><div class="army" id="aktsiabrski-raion-army"><img src="assets/img/germany_reich.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="280" y="375"><div class="army" id="petrykauski-raion-army"><img src="assets/img/germany_reich.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="240" y="370"><div class="army" id="zhytkavitski-raion-army"><img src="assets/img/germany_reich.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="260" y="420"><div class="army" id="lelchytski-raion-army"><img src="assets/img/germany_reich.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="330" y="380"><div class="army" id="kalinkavitski-raion-army"><img src="assets/img/germany_reich.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="305" y="405"><div class="army" id="mazyrski-raion-army"><img src="assets/img/germany_reich.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="300" y="430"><div class="army" id="elski-raion-army"><img src="assets/img/germany_reich.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="335" y="445"><div class="army" id="naraulianski-raion-army"><img src="assets/img/germany_reich.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="355" y="415"><div class="army" id="khoinitski-raion-army"><img src="assets/img/germany_reich.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="385" y="435"><div class="army" id="brahinski-raion-army"><img src="assets/img/germany_reich.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="380" y="375"><div class="army" id="rechytski-raion-army"><img src="assets/img/germany_reich.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="400" y="405"><div class="army" id="loeuski-raion-army"><img src="assets/img/germany_reich.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="395" y="340"><div class="army" id="buda-kashaliouski-raion-army"><img src="assets/img/ussr.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="420" y="385"><div class="army" id="homelski-raion-army"><img src="assets/img/germany_reich.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="435" y="335"><div class="army" id="vetkauski-raion-army"><img src="assets/img/ussr.png"><b id="army-text">0Т</b></div></foreignobject>
-				<foreignobject x="445" y="375"><div class="army" id="dobrushski-raion-army"><img src="assets/img/germany_reich.png"><b id="army-text">0Т</b></div></foreignobject>
+				<foreignObject width="50" height="25" x="412" y="295"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="karmianski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="420" y="313"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="chacherski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="372" y="300"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="rahachouski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="362" y="325"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="zhlobinski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="340" y="350"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="svetlahorski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="300" y="345"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="aktsiabrski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="280" y="375"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="petrykauski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="240" y="370"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="zhytkavitski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="260" y="420"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="lelchytski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="330" y="380"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="kalinkavitski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="305" y="405"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="mazyrski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="300" y="430"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="elski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="335" y="445"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="naraulianski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="355" y="415"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="khoinitski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="385" y="435"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="brahinski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="380" y="375"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="rechytski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="400" y="405"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="loeuski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="395" y="340"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="buda-kashaliouski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="420" y="385"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="homelski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="435" y="335"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="vetkauski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="445" y="375"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="dobrushski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="army-text">0Т</b></div></foreignObject>
 
 				<g id="harady">
-					<circle id="horad-pinsk" cx="170" cy="400" r="5"></circle>
-					<circle id="horad-baranavichy" cx="165" cy="305" r="5"></circle>
-					<circle id="horad-zhodzina" cx="295" cy="210" r="5"></circle>
-					<circle id="horad-babruisk" cx="345" cy="300" r="5"></circle>
-					<circle id="horad-mahiliou" cx="410" cy="230" r="5"></circle>
-					<circle id="horad-brest" cx="35" cy="405" r="5"></circle>
-					<circle id="horad-vitsebsk" cx="400" cy="110" r="5"></circle>
-					<circle id="horad-homel" cx="450" cy="375" r="5"></circle>
-					<circle id="horad-hrodna" cx="40" cy="250" r="5"></circle>
-					<circle id="horad-navapolatsk" cx="310" cy="75" r="5"></circle>
+					<!-- <circle id="horad-pinsk" cx="170" cy="400" r="5"></circle> -->
+					<foreignObject width="50" height="35" x="150" y="380">
+						<div xmlns="http://www.w3.org/1999/xhtml" class="town">
+							<img src="assets/img/town-hall.svg" width="15px" height="15px">
+							<b id="army-text">Пинск</b>
+						</div>
+					</foreignObject>
+
+					<!-- <circle id="horad-baranavichy" cx="165" cy="305" r="5"></circle> -->
+					<foreignObject width="50" height="35" x="145" y="285">
+						<div xmlns="http://www.w3.org/1999/xhtml" class="town">
+							<img src="assets/img/town-hall.svg" style="position: relative; left: 50%; transform: translateX(-50%);" width="15px" height="15px">
+							<b id="army-text">Барановичи</b>
+						</div>
+					</foreignObject>
+
+					<!-- <circle id="horad-zhodzina" cx="295" cy="210" r="5"></circle> -->
+					<foreignObject width="50" height="35" x="275" y="190">
+						<div xmlns="http://www.w3.org/1999/xhtml" class="town">
+							<img src="assets/img/town-hall.svg" width="15px" height="15px">
+							<b id="army-text">Жодино</b>
+						</div>
+					</foreignObject>
+
+					<!-- <circle id="horad-babruisk" cx="345" cy="300" r="5"></circle> -->
+					<foreignObject width="50" height="35" x="325" y="280">
+						<div xmlns="http://www.w3.org/1999/xhtml" class="town">
+							<img src="assets/img/town-hall.svg" width="15px" height="15px">
+							<b id="army-text">Бобруйск</b>
+						</div>
+					</foreignObject>
+
+					<!-- <circle id="horad-mahiliou" cx="410" cy="230" r="5"></circle> -->
+					<foreignObject width="50" height="35" x="390" y="210">
+						<div xmlns="http://www.w3.org/1999/xhtml" class="town">
+							<img src="assets/img/town-hall.svg" width="15px" height="15px">
+							<b id="army-text">Могилёв</b>
+						</div>
+					</foreignObject>
+
+					<!-- <circle id="horad-brest" cx="35" cy="405" r="5"></circle> -->
+					<foreignObject width="50" height="35" x="18" y="385">
+						<div xmlns="http://www.w3.org/1999/xhtml" class="town">
+							<img src="assets/img/town-hall.svg" width="15px" height="15px">
+							<b id="army-text">Брест</b>
+						</div>
+					</foreignObject>
+
+					<!-- <circle id="horad-vitsebsk" cx="400" cy="110" r="5"></circle> -->
+					<foreignObject width="50" height="35" x="380" y="90">
+						<div xmlns="http://www.w3.org/1999/xhtml" class="town">
+							<img src="assets/img/town-hall.svg" width="15px" height="15px">
+							<b id="army-text">Витебск</b>
+						</div>
+					</foreignObject>
+
+					<!-- <circle id="horad-homel" cx="450" cy="375" r="5"></circle> -->
+					<foreignObject width="50" height="35" x="430" y="355">
+						<div xmlns="http://www.w3.org/1999/xhtml" class="town">
+							<img src="assets/img/town-hall.svg" width="15px" height="15px">
+							<b id="army-text">Гомель</b>
+						</div>
+					</foreignObject>
+
+					<!-- <circle id="horad-hrodna" cx="40" cy="250" r="5"></circle> -->
+					<foreignObject width="50" height="35" x="20" y="230">
+						<div xmlns="http://www.w3.org/1999/xhtml" class="town">
+							<img src="assets/img/town-hall.svg" width="15px" height="15px">
+							<b id="army-text">Гродно</b>
+						</div>
+					</foreignObject>
+
+					<!-- <circle id="horad-navapolatsk" cx="310" cy="75" r="5"></circle> -->
+					<foreignObject width="50" height="35" x="290" y="55">
+						<div xmlns="http://www.w3.org/1999/xhtml" class="town">
+							<img src="assets/img/town-hall.svg" style="position: relative; left: 50%; transform: translateX(-50%);" width="15px" height="15px">
+							<b id="army-text">Новополотск</b>
+						</div>
+					</foreignObject>
+
 				</g>
 
-				<circle id="horad-minsk" cx="253" cy="231" r="8"></circle>
+				<!-- <circle id="horad-minsk" cx="253" cy="231" r="8"></circle> -->
+				<foreignObject width="50" height="35" x="233" y="211">
+					<div xmlns="http://www.w3.org/1999/xhtml" class="town">
+						<img src="assets/img/town-hall.svg" width="15px" height="15px">
+						<b id="army-text">Минск</b>
+					</div>
+				</foreignObject>
 			</g>
 		</svg>
 
 		<div class="top-panel">
-			<div class="image"><img id="player_country_flag" src="assets/img/germany_reich.png"></div>
-			<div class="info">
-				<div class="top" id="player_country">Рейх</div>
-				<div class="bottom state_name" id="state_name">59 территорий</div>
+			<div class="player-info">
+				<div class="image"><img id="player_country_flag" src="assets/img/germany.svg"></div>
+				<div class="info">
+					<div class="top" id="player_country">Рейх</div>
+					<div class="bottom state_name" id="state_name">59 территорий</div>
+				</div>
 			</div>
-			<div class="peoples" onclick="popup('open');"><img src="assets/img/military.png" width="32" height="32"></div>
-			<div class="logs" onclick="openLogs();"><img src="assets/img/list.png" width="32" height="32"></div>
+			<div class="peoples" onclick="popup('open');">
+				<img src="assets/img/military.svg" width="32" height="32"><br>
+				Призыв
+			</div>
+			<div class="logs" onclick="openLogs();">
+				<img src="assets/img/list.svg" width="32" height="32"><br>
+				Хронология
+			</div>
 			<div class="two-buttons-group">
-				<div class="spectators">
+<!-- 				<div class="spectators">
 					<label id="spectators-count">0</label> <i class="fas fa-eye"></i>
 				</div>
 				<div class="report" onclick="report();">
 					Отправить жалобу <i class="fas fa-headphones-alt"></i>
-				</div>
+				</div> -->
 			</div>
 		</div>
-	
-		<div class="clouds" id="clouds">
+
+		<div class="game-time">
+			<b id="time-to-end">00:00</b><br>
+			до окончания боя
 		</div>
 
 		<div class="bottom_menu">
@@ -369,7 +456,7 @@
 			<div onclick="move_cancel();" class="button">Отмена</div>
 		</div>
 
-		<div class="flag_teh">
+<!-- 		<div class="flag_teh">
 			<b class="text-primary">Т</b><label>ЕХНОЛОГИИ</label>
 		</div>
 
@@ -383,7 +470,7 @@
 
 		<div class="flag_boo" onclick="openSupport();">
 			<b class="text-success">П</b><label>ОДДЕРЖКА</label>
-		</div>
+		</div> -->
 
 		<div class="chat">
 			<div class="chat-button" onclick="chat_button();"><img id="chat-button-img" src="assets/img/arrow-up.png" width="14" height="14"></div>
@@ -412,32 +499,32 @@
 
 		<div class="right-panel">
 			<div class="header">
-				<div class="image"><img id="terr_player_country_flag" src="assets/img/germany.png" width="32" height="32"></div>
+				<div class="image"><img id="terr_player_country_flag" src="assets/img/germany.svg" width="32" height="32"></div>
 				<div class="info">
-					<div class="top" id="terr_player_country"><b>Третий рейх</b></div>
-					<div class="bottom state_name" id="terr_state_name">9 территорий</div>
+					<div class="top" id="terr_player_country"><b>Рейх</b></div>
+					<div class="bottom state_name" id="terr_state_name">59 территорий</div>
 				</div>
 			</div>
 			<div class="body row">
 				<div class="col-md-12">
 					<div class="clearfix">
-						<div class="float-left">Область</div>
-						<div class="float-right" id="state_terr_vobl">?</div>
+						<div class="float-left">Область</div><br>
+						<div class="float-left" id="state_terr_vobl">> ?</div>
 					</div>
 				</div>
 				<div class="col-md-12">
 					<div class="clearfix my-1">
-						<div class="float-left">Район</div>
-						<div class="float-right" id="state_terr">?</div>
+						<div class="float-left">Район</div><br>
+						<div class="float-left" id="state_terr">> ?</div>
 					</div>
 				</div>
 			</div>
-			<div class="header mt-3 p-2"><div class="mx-auto" id="terr_owner">Армия Undefined</div></div>
+			<div class="header mt-3 p-2"><div class="mx-auto" id="terr_owner">Армия Рейха</div></div>
 			<div class="body" id="right-panel-body">
 				<div class="col-md-12">
 					<div class="clearfix my-1">
-						<div class="float-left">Армия</div>
-						<div class="float-right" id="state_army_name"></div>
+						<div class="float-left">Армия</div><br>
+						<div class="float-left" id="state_army_name">> </div>
 					</div>
 					<div class="clearfix my-1">
 						<div class="float-left">Численность</div>
@@ -446,11 +533,13 @@
 				</div>
 			</div>
 			<div class="header row buttons p-0">
-				<div class="col-md-6 py-3" onclick="show_moveArmy();">
-					<div class="mx-auto"><div class="button"><img src="assets/img/move.png" width="24" height="24"></div></div>
+				<div onclick="show_moveArmy();">
+					<img src="assets/img/move.svg" width="32" height="32">
+					Движение
 				</div>
-				<div class="col-md-6 py-3" onclick="show_anon();">
-					<div class="mx-auto"><div class="button"><img src="assets/img/soldiers.png" width="24" height="24"></div></div>
+				<div onclick="show_anon();">
+					<img src="assets/img/soldiers.svg" width="32" height="32">
+					Партизаны
 				</div>
 			</div>
 		</div>
@@ -513,6 +602,7 @@
 			<div class="close" onclick="hideSupport();">&times;</div>
 		</div>
 
+		<div id="top-line"></div>
 	</div>
 
 	<div id="spectator_game">
@@ -677,129 +767,129 @@
 
 				<g id="spectator_border"></g>
 
-				<foreignobject x="135" y="280"><div class="army" id="spectator_baranavitski-raion-army"><img src="assets/img/germany_reich.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="145" y="320"><div class="army" id="spectator_liahavitski-raion-army"><img src="assets/img/germany_reich.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="165" y="340"><div class="army" id="spectator_hantsavitski-raion-army"><img src="assets/img/germany_reich.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="195" y="375"><div class="army" id="spectator_luninetski-raion-army"><img src="assets/img/germany_reich.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="205" y="410"><div class="army" id="spectator_stolinski-raion-army"><img src="assets/img/germany_reich.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="155" y="370"><div class="army" id="spectator_pinski-raion-army"><img src="assets/img/germany_reich.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="120" y="335"><div class="army" id="spectator_ivatsevichski-raion-army"><img src="assets/img/germany_reich.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="115" y="395"><div class="army" id="spectator_ivanauski-raion-army"><img src="assets/img/germany_reich.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="85" y="355"><div class="army" id="spectator_biarozauski-raion-army"><img src="assets/img/germany_reich.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="45" y="345"><div class="army" id="spectator_pruzhanski-raion-army"><img src="assets/img/germany_reich.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="10" y="360"><div class="army" id="spectator_kamianetski-raion-army"><img src="assets/img/germany_reich.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="10" y="405"><div class="army" id="spectator_brestski-raion-army"><img src="assets/img/germany_reich.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="30" y="390"><div class="army" id="spectator_zhabinkauski-raion-army"><img src="assets/img/germany_reich.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="35" y="420"><div class="army" id="spectator_malarytski-raion-army"><img src="assets/img/germany_reich.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="55" y="375"><div class="army" id="spectator_kobrynski-raion-army"><img src="assets/img/germany_reich.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="90" y="380"><div class="army" id="spectator_drahichynski-raion-army"><img src="assets/img/germany_reich.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
+				<foreignObject width="50" height="25" x="135" y="280"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_baranavitski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="145" y="320"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_liahavitski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="165" y="340"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_hantsavitski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="195" y="375"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_luninetski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="205" y="410"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_stolinski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="155" y="370"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_pinski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="120" y="335"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_ivatsevichski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="115" y="395"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_ivanauski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="85" y="355"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_biarozauski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="45" y="345"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_pruzhanski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="10" y="360"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_kamianetski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="10" y="405"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_brestski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="30" y="390"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_zhabinkauski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="35" y="420"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_malarytski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="55" y="375"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_kobrynski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="90" y="380"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_drahichynski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
 
-				<foreignobject x="220" y="340"><div class="army" id="spectator_salihorski-raion-army"><img src="assets/img/germany_reich.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="250" y="330"><div class="army" id="spectator_liubanski-raion-army"><img src="assets/img/germany_reich.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="260" y="305"><div class="army" id="spectator_staradarozhski-raion-army"><img src="assets/img/germany_reich.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="250" y="265"><div class="army" id="spectator_puhavitski-raion-army"><img src="assets/img/ussr.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="270" y="240"><div class="army" id="spectator_chervenski-raion-army"><img src="assets/img/ussr.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="310" y="230"><div class="army" id="spectator_biarezinski-raion-army"><img src="assets/img/ussr.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="310" y="170"><div class="army" id="spectator_krupski-raion-army"><img src="assets/img/ussr.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="280" y="185"><div class="army" id="spectator_barysauski-raion-army"><img src="assets/img/ussr.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="260" y="215"><div class="army" id="spectator_smaliavitski-raion-army"><img src="assets/img/ussr.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="240" y="175"><div class="army" id="spectator_lagoiski-raion-army"><img src="assets/img/ussr.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="195" y="135"><div class="army" id="spectator_miadzelski-raion-army"><img src="assets/img/ussr.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="200" y="165"><div class="army" id="spectator_vileiski-raion-army"><img src="assets/img/ussr.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="190" y="190"><div class="army" id="spectator_maladzechanski-raion-army"><img src="assets/img/ussr.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="220" y="205"><div class="army" id="spectator_minski-raion-army"><img src="assets/img/ussr.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="180" y="215"><div class="army" id="spectator_valozhynski-raion-army"><img src="assets/img/germany_reich.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="175" y="235"><div class="army" id="spectator_staubtsouski-raion-army"><img src="assets/img/germany_reich.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="205" y="240"><div class="army" id="spectator_dziarzhynski-raion-army"><img src="assets/img/germany_reich.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="210" y="265"><div class="army" id="spectator_uzdzenski-raion-army"><img src="assets/img/germany_reich.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="220" y="305"><div class="army" id="spectator_slutski-raion-army"><img src="assets/img/germany_reich.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="205" y="290"><div class="army" id="spectator_kapylski-raion-army"><img src="assets/img/germany_reich.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="170" y="285"><div class="army" id="spectator_niasvizhski-raion-army"><img src="assets/img/germany_reich.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="170" y="310"><div class="army" id="spectator_kletski-raion-army"><img src="assets/img/germany_reich.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
+				<foreignObject width="50" height="25" x="220" y="340"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_salihorski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="250" y="330"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_liubanski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="260" y="305"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_staradarozhski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="250" y="265"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_puhavitski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="270" y="240"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_chervenski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="310" y="230"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_biarezinski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="310" y="170"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_krupski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="280" y="185"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_barysauski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="260" y="215"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_smaliavitski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="240" y="175"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_lagoiski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="195" y="135"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_miadzelski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="200" y="165"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_vileiski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="190" y="190"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_maladzechanski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="220" y="205"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_minski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="180" y="215"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_valozhynski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="175" y="235"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_staubtsouski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="205" y="240"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_dziarzhynski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="210" y="265"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_uzdzenski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="220" y="305"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_slutski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="205" y="290"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_kapylski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="170" y="285"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_niasvizhski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="170" y="310"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_kletski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
 				
-				<foreignobject x="30" y="228"><div class="army" id="spectator_hrodzenski-raion-army"><img src="assets/img/germany_reich.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="25" y="282"><div class="army" id="spectator_berastavitski-raion-army"><img src="assets/img/germany_reich.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="50" y="290"><div class="army" id="spectator_vaukavyski-raion-army"><img src="assets/img/germany_reich.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="65" y="270"><div class="army" id="spectator_mastouski-raion-army"><img src="assets/img/germany_reich.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="80" y="291"><div class="army" id="spectator_zelvenski-raion-army"><img src="assets/img/germany_reich.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="40" y="315"><div class="army" id="spectator_svislatski-raion-army"><img src="assets/img/germany_reich.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="97" y="303"><div class="army" id="spectator_slonimski-raion-army"><img src="assets/img/germany_reich.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="104" y="267"><div class="army" id="spectator_dziatlauski-raion-army"><img src="assets/img/germany_reich.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="65" y="245"><div class="army" id="spectator_shchuchynski-raion-army"><img src="assets/img/germany_reich.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="90" y="205"><div class="army" id="spectator_voranauski-raion-army"><img src="assets/img/germany_reich.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="95" y="235"><div class="army" id="spectator_lidski-raion-army"><img src="assets/img/germany_reich.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="130" y="240"><div class="army" id="spectator_navagrudski-raion-army"><img src="assets/img/germany_reich.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="150" y="260"><div class="army" id="spectator_karelitski-raion-army"><img src="assets/img/germany_reich.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="130" y="210"><div class="army" id="spectator_iueuski-raion-army"><img src="assets/img/germany_reich.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="130" y="175"><div class="army" id="spectator_ashmianski-raion-army"><img src="assets/img/germany_reich.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="157" y="165"><div class="army" id="spectator_smargonski-raion-army"><img src="assets/img/germany_reich.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="135" y="140"><div class="army" id="spectator_astravetski-raion-army"><img src="assets/img/germany_reich.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
+				<foreignObject width="50" height="25" x="30" y="228"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_hrodzenski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="25" y="282"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_berastavitski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="50" y="290"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_vaukavyski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="65" y="270"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_mastouski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="80" y="291"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_zelvenski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="40" y="315"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_svislatski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="97" y="303"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_slonimski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="104" y="267"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_dziatlauski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="65" y="245"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_shchuchynski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="90" y="205"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_voranauski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="95" y="235"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_lidski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="130" y="240"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_navagrudski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="150" y="260"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_karelitski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="130" y="210"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_iueuski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="130" y="175"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_ashmianski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="157" y="165"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_smargonski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="135" y="140"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_astravetski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
 				
-				<foreignobject x="185" y="110"><div class="army" id="spectator_pastauski-raion-army"><img src="assets/img/ussr.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="190" y="60"><div class="army" id="spectator_braslauski-raion-army"><img src="assets/img/ussr.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="230" y="80"><div class="army" id="spectator_sharkaushchynski-raion-army"><img src="assets/img/ussr.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="245" y="130"><div class="army" id="spectator_dokshytski-raion-army"><img src="assets/img/ussr.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="245" y="100"><div class="army" id="spectator_hlybotski-raion-army"><img src="assets/img/ussr.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="240" y="60"><div class="army" id="spectator_miorski-raion-army"><img src="assets/img/ussr.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="250" y="33"><div class="army" id="spectator_verhniadzvinski-raion-army"><img src="assets/img/ussr.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="285" y="135"><div class="army" id="spectator_lepelski-raion-army"><img src="assets/img/ussr.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="315" y="143"><div class="army" id="spectator_chashnitski-raion-army"><img src="assets/img/ussr.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="355" y="170"><div class="army" id="spectator_talachynski-raion-army"><img src="assets/img/ussr.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="382" y="160"><div class="army" id="spectator_arshanski-raion-army"><img src="assets/img/ussr.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="412" y="152"><div class="army" id="spectator_dubrovenski-raion-army"><img src="assets/img/ussr.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="362" y="132"><div class="army" id="spectator_sennenski-raion-army"><img src="assets/img/ussr.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="402" y="117"><div class="army" id="spectator_lioznenski-raion-army"><img src="assets/img/ussr.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="388" y="90"><div class="army" id="spectator_vitsebski-raion-army"><img src="assets/img/ussr.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="338" y="115"><div class="army" id="spectator_beshankovitski-raion-army"><img src="assets/img/ussr.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="338" y="90"><div class="army" id="spectator_shumilinski-raion-army"><img src="assets/img/ussr.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="295" y="100"><div class="army" id="spectator_ushatski-raion-army"><img src="assets/img/ussr.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="310" y="60"><div class="army" id="spectator_polatski-raion-army"><img src="assets/img/ussr.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="370" y="60"><div class="army" id="spectator_haradotski-raion-army"><img src="assets/img/ussr.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="300" y="35"><div class="army" id="spectator_rasonski-raion-army"><img src="assets/img/ussr.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
+				<foreignObject width="50" height="25" x="185" y="110"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_pastauski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="190" y="60"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_braslauski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="230" y="80"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_sharkaushchynski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="245" y="130"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_dokshytski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="245" y="100"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_hlybotski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="240" y="60"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_miorski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="250" y="33"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_verhniadzvinski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="285" y="135"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_lepelski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="315" y="143"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_chashnitski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="355" y="170"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_talachynski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="382" y="160"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_arshanski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="412" y="152"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_dubrovenski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="362" y="132"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_sennenski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="402" y="117"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_lioznenski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="388" y="90"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_vitsebski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="338" y="115"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_beshankovitski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="338" y="90"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_shumilinski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="295" y="100"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_ushatski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="310" y="60"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_polatski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="370" y="60"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_haradotski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="300" y="35"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_rasonski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
 
-				<foreignobject x="420" y="185"><div class="army" id="spectator_horatski-raion-army"><img src="assets/img/ussr.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="450" y="214"><div class="army" id="spectator_drybinski-raion-army"><img src="assets/img/ussr.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="420" y="204"><div class="army" id="spectator_mstsislauski-raion-army"><img src="assets/img/ussr.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="385" y="197"><div class="army" id="spectator_shklouski-raion-army"><img src="assets/img/ussr.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="350" y="193"><div class="army" id="spectator_kruhlianski-raion-army"><img src="assets/img/ussr.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="348" y="215"><div class="army" id="spectator_bialynitski-raion-army"><img src="assets/img/ussr.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="333" y="250"><div class="army" id="spectator_klichauski-raion-army"><img src="assets/img/ussr.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="288" y="275"><div class="army" id="spectator_asipovitski-raion-army"><img src="assets/img/ussr.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="287" y="317"><div class="army" id="spectator_hluski-raion-army"><img src="assets/img/germany_reich.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="320" y="305"><div class="army" id="spectator_babruiski-raion-army"><img src="assets/img/ussr.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="335" y="280"><div class="army" id="spectator_kirauski-raion-army"><img src="assets/img/ussr.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="380" y="260"><div class="army" id="spectator_byhauski-raion-army"><img src="assets/img/ussr.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="377" y="233"><div class="army" id="spectator_mahiliouski-raion-army"><img src="assets/img/ussr.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="417" y="227"><div class="army" id="spectator_chavuski-raion-army"><img src="assets/img/ussr.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="440" y="253"><div class="army" id="spectator_cherykauski-raion-army"><img src="assets/img/ussr.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="453" y="237"><div class="army" id="spectator_krychauski-raion-army"><img src="assets/img/ussr.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="480" y="247"><div class="army" id="spectator_klimavitski-raion-army"><img src="assets/img/ussr.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="500" y="267"><div class="army" id="spectator_khotsimski-raion-army"><img src="assets/img/ussr.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="475" y="285"><div class="army" id="spectator_kastsiukovitski-raion-army"><img src="assets/img/ussr.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="444" y="275"><div class="army" id="spectator_krasnapolski-raion-army"><img src="assets/img/ussr.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="412" y="265"><div class="army" id="spectator_slauharadski-raion-army"><img src="assets/img/ussr.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
+				<foreignObject width="50" height="25" x="420" y="185"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_horatski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="450" y="214"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_drybinski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="420" y="204"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_mstsislauski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="385" y="197"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_shklouski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="350" y="193"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_kruhlianski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="348" y="215"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_bialynitski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="333" y="250"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_klichauski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="288" y="275"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_asipovitski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="287" y="317"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_hluski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="320" y="305"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_babruiski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="335" y="280"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_kirauski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="380" y="260"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_byhauski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="377" y="233"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_mahiliouski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="417" y="227"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_chavuski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="440" y="253"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_cherykauski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="453" y="237"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_krychauski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="480" y="247"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_klimavitski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="500" y="267"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_khotsimski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="475" y="285"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_kastsiukovitski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="444" y="275"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_krasnapolski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="412" y="265"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_slauharadski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
 
-				<foreignobject x="412" y="295"><div class="army" id="spectator_karmianski-raion-army"><img src="assets/img/ussr.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="420" y="313"><div class="army" id="spectator_chacherski-raion-army"><img src="assets/img/ussr.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="372" y="300"><div class="army" id="spectator_rahachouski-raion-army"><img src="assets/img/ussr.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="362" y="325"><div class="army" id="spectator_zhlobinski-raion-army"><img src="assets/img/ussr.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="340" y="350"><div class="army" id="spectator_svetlahorski-raion-army"><img src="assets/img/ussr.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="300" y="345"><div class="army" id="spectator_aktsiabrski-raion-army"><img src="assets/img/germany_reich.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="280" y="375"><div class="army" id="spectator_petrykauski-raion-army"><img src="assets/img/germany_reich.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="240" y="370"><div class="army" id="spectator_zhytkavitski-raion-army"><img src="assets/img/germany_reich.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="260" y="420"><div class="army" id="spectator_lelchytski-raion-army"><img src="assets/img/germany_reich.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="330" y="380"><div class="army" id="spectator_kalinkavitski-raion-army"><img src="assets/img/germany_reich.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="305" y="405"><div class="army" id="spectator_mazyrski-raion-army"><img src="assets/img/germany_reich.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="300" y="430"><div class="army" id="spectator_elski-raion-army"><img src="assets/img/germany_reich.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="335" y="445"><div class="army" id="spectator_naraulianski-raion-army"><img src="assets/img/germany_reich.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="355" y="415"><div class="army" id="spectator_khoinitski-raion-army"><img src="assets/img/germany_reich.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="385" y="435"><div class="army" id="spectator_brahinski-raion-army"><img src="assets/img/germany_reich.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="380" y="375"><div class="army" id="spectator_rechytski-raion-army"><img src="assets/img/germany_reich.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="400" y="405"><div class="army" id="spectator_loeuski-raion-army"><img src="assets/img/germany_reich.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="395" y="340"><div class="army" id="spectator_buda-kashaliouski-raion-army"><img src="assets/img/ussr.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="420" y="385"><div class="army" id="spectator_homelski-raion-army"><img src="assets/img/germany_reich.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="435" y="335"><div class="army" id="spectator_vetkauski-raion-army"><img src="assets/img/ussr.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
-				<foreignobject x="445" y="375"><div class="army" id="spectator_dobrushski-raion-army"><img src="assets/img/germany_reich.png"><b id="spectator_army-text">0Т</b></div></foreignobject>
+				<foreignObject width="50" height="25" x="412" y="295"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_karmianski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="420" y="313"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_chacherski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="372" y="300"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_rahachouski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="362" y="325"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_zhlobinski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="340" y="350"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_svetlahorski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="300" y="345"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_aktsiabrski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="280" y="375"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_petrykauski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="240" y="370"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_zhytkavitski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="260" y="420"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_lelchytski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="330" y="380"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_kalinkavitski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="305" y="405"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_mazyrski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="300" y="430"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_elski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="335" y="445"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_naraulianski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="355" y="415"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_khoinitski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="385" y="435"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_brahinski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="380" y="375"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_rechytski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="400" y="405"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_loeuski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="395" y="340"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_buda-kashaliouski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="420" y="385"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_homelski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="435" y="335"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_vetkauski-raion-army"><img src="assets/img/ussr.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
+				<foreignObject width="50" height="25" x="445" y="375"><div xmlns="http://www.w3.org/1999/xhtml" class="army" id="spectator_dobrushski-raion-army"><img src="assets/img/germany.svg" width="15px" height="15px"><b id="spectator_army-text">0Т</b></div></foreignObject>
 
 				<g id="harady">
 					<circle spectator_horad-pinsk" cx="170" cy="400" r="5"></circle>
@@ -820,7 +910,7 @@
 
 		<div class="spectator-top-panel">
 			<div class="left" onmouseover="spec_hover(2);" onmouseleave="spec_unhover();">
-				<div class="image"><img id="player_country_flag" src="assets/img/germany_reich.png" width="30" height="30"></div>
+				<div class="image"><img id="player_country_flag" src="assets/img/germany.svg" width="15px" height="15px" width="30" height="30"></div>
 				<div class="info">
 					<div class="top" id="player_country">Рейх</div>
 					<div class="bottom state_name" id="spec_states1">59 территорий</div>
@@ -831,7 +921,7 @@
 					<div class="top" id="player_country">СССР</div>
 					<div class="bottom state_name" id="spec_states2">59 территорий</div>
 				</div>
-				<div class="image"><img id="player_country_flag" src="assets/img/ussr.png" width="30" height="30"></div>
+				<div class="image"><img id="player_country_flag" src="assets/img/ussr.svg" width="15px" height="15px" width="30" height="30"></div>
 			</div>
 		</div>
 
@@ -863,160 +953,86 @@
 		</div> -->
 	</div>
 
-	<div id="menu">	
-		<div class="back-menu" id="pc">
-			<div class="row">
-				<div class="col-md-3">
-					<div class="block-1-back" onclick="randomserver();">
-						<div class="block-1 p-3">
-							<b>Подключиться</b><br><br>
-							<p>Система автоматически находит свободный сервер и подключается на него. Сервер может быть с любыми настройками.</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3">
-					<div class="block-2-back" onclick="to_serverlist();">
-						<div class="block-2 p-3">
-							<b>Сервера</b><br><br>
-							<p>Список доступных созданных серверов. В списке можно узнать все настройки сервера, создателя. Если Вам понравился сервер, и его не успели занять - можно подключиться прямо со списка.</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="block-3-back" onclick="to_createserver();">
-						<div class="block-3 p-3">
-							<b>Создать сервер</b><br><br>
-							<p>Создать свой собственный сервер, установить настройки на Ваш выбор. Сервер будет отображаться в списке серверов, и на него сможет подключиться любой игрок.</p>
-						</div>
-					</div>
-					<div class="block-4-back">
-						<div class="block-4 p-3">
-							<b>Настройки</b><br><br>
-							<p>Настроить громкость музыки, интерфейс, графику, посмотреть создателей игры - всё здесь.</p>
-						</div>
-					</div>
-				</div>
+	<div class="menu" id="menu">
+		<div class="container" id="createserverbutton">
+			<div class="menu-list">
+				<div class="mm" onclick="changeMainmenu(0)">Новая игра</div>
+				<div class="mm" onclick="changeMainmenu(1)">Загрузить игру</div>
+				<div class="mm" onclick="randomserver();">Случайная игра</div>
+				<div class="mm" onclick="changeMainmenu(3)">Настройки</div>
+			</div>
+			<div class="menu-container" id="servers">
+			</div>
+			<div class="menu-container" id="new_game">
+				<div class="btn" onclick="createserver();">Создать сервер</div>
 			</div>
 		</div>
-		<div id="android">
-			<div class="row">
-				<div class="mx-5 my-2 mt-5 android-button" onclick="randomserver();"><div>Подключиться к случайному серверу</div></div>
-				<div class="mx-5 my-2 android-button" onclick="to_serverlist();"><div>Список серверов</div></div>
-				<div class="mx-5 my-2 android-button" onclick="to_createserver();"><div>Создать сервер</div></div>
-				<div class="mx-5 my-2 mb-5 android-button"><div><del>Настройки игры</del></div></div>
-			</div>
-		</div>
-	</div>
+		<script>
+			document.getElementById("servers").style.display = "none";
+			document.getElementById("new_game").style.display = "none";
 
-	<div id="startgame">
-		<div id="startgame-block">
-			<div class="header text-center clearfix">
-				<button class="btn btn-sm btn-outline-light float-left" onclick="to_menu();" id="startgame_tomenu"><b>Назад</b></button>
-				Создать сервер
-				<div class="float-right">
-					 <div class="btn btn-sm btn-outline-light float-left"><b><label id="server-list_count1"></label> онлайн</b></div>
-				</div>
-			</div>
-			<div class="body row">
-				<div class="p-3 row">
-					<div id="pc">
-						<div class="col-md-12 py-2">
-							<p style="font-size: 12px;">Выбор сложности игры - основной этап создания сервера. Если выбрать лёгкую сложность игры - игра пройдёт быстрее и легче, не будет различных событий, страны будут находиться на одном уровне развитий, останется только воевать. При выборе больших уровней сложности игрокам придётся самим расставлять дивизии, строить фабрики, покупать ресурсы у других стран.</p>
-							<div class="spec text-center my-4">
-								<div class="block-active"><img src="assets/img/classes/tank.png" width="30" height="30"></div>
-								<div class="block"><img src="assets/img/classes/plane.png" width="30" height="30"></div>
-								<div class="block"><img src="assets/img/classes/ship.png" width="30" height="30"></div>
-								<div class="block"><img src="assets/img/classes/bomb.png" width="30" height="30"></div>
-								<div class="block"><img src="assets/img/classes/bullet.png" width="30" height="30"></div>
-							</div><br><br>
-							<div class="text-center" style="width:100%;">
-								<b>Лёгкая сложность</b><br>
-								<p>У двух стран в начале игры построены фабрики и расставлены дивизии.</p>
-								<div id="createserverbutton">
-									<button class="btn btn-verydark" onclick="createserver();">Создать сервер</button>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div id="android">
-						<div class="text-center" style="width:100%;font-size:5vw;padding:3vw;">
-							<b>Лёгкая сложность</b><br>
-							<p>У двух стран в начале игры построены фабрики и расставлены дивизии.</p>
-							<div id="createserverbutton">
-								<button style="font-size:4vw;padding:2vw 4vw;" class="btn btn-verydark" onclick="createserver();">Создать сервер</button>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+			var menus_list = ["new_game", "servers", null, null];
 
-	<div id="serverlist">
-		<div id="serverlist-block">
-			<div class="header text-center clearfix">
-				<button class="btn btn-sm btn-outline-light float-left" onclick="to_menu();"><b>Назад</b></button>
-				Список доступных серверов
-				<div class="float-right">
-					<div class="btn btn-sm btn-outline-light float-left" style="font-size:10px;padding:3px 5px;margin-top:-3px;"><b><label id="server-list_count2"></label> онлайн</b></div>
-				</div>
-			</div>
-			<div class="body row" id="server-list"></div>
-		</div>
-	</div>
+			function changeMainmenu(id){
+				document.getElementsByClassName('mm')[0].className = "mm";
+				document.getElementsByClassName('mm')[1].className = "mm";
+				document.getElementsByClassName('mm')[2].className = "mm";
+				document.getElementsByClassName('mm')[3].className = "mm";
+				document.getElementsByClassName('mm')[id].className = "mm active";
 
-	<div id="video">
-		<div class="background">
-			<img src="assets/img/logotype.png" alt="" class="logotype">
-	
-			<div class="progressbar-back">
-				<div class="progressbar">0%</div>
-			</div>
-
-			<script>
-				function randomInteger(min, max) {
-				    let rand = min + Math.random() * (max + 1 - min);
-				    rand = Math.floor(rand);
-				    return rand;
+				if(id == 1){
+					socket.emit('server-list', {
+						command: 'CS002'
+					});
 				}
 
-				var _progress;
+				document.getElementById("servers").style.display = "none";
+				document.getElementById("new_game").style.display = "none";
+				document.getElementById(menus_list[id]).style.display = "flex";
+			}
+		</script>
+	</div>
 
-				function setProgress(){
-					var time = randomInteger(0,1);
-					var _el = $('.progressbar');
-					var progress = (_el.text().split('%')[0])*1;
+	<div class="loading">
+		<div class="container">
+			<div class="block"><div class="left"></div>
+				<div class="content" style="width:170px;" id="loading-time">загрузка игры.. 0%</div>
+				<script>
+					var loading = 0;
+					var div = document.getElementById('loading-time');
 
-					progress = progress + time;
-					_progress = progress;
-					_el.css('width',progress+'%');
-					_el.text(progress+'%');
-				}
+					var timer = setInterval(function(){
+						if(loading >= 100){ 
+							clearInterval(timer);
+							clearInterval(papers);
+							div.innerHTML = `загрузка игры.. ${loading}%`;
 
-				var int = setInterval(function(){
-					if(_progress > 98) clearInterval(int);
-					setProgress();
-				}, 100);
+							setTimeout(function(){
+								document.getElementsByClassName('menu')[0].style.display = "block";
+								document.getElementsByClassName('loading')[0].style.opacity = "0";
+								setTimeout(function(){
+									document.getElementsByClassName('loading')[0].style.display = "none";
+								}, 1000);
+							}, 1000);
+						} else {
+							loading++;
+							if(randomInteger(1,3) == 1)
+								div.innerHTML = `загрузка игры.. ${loading}%`;
+						}
+					}, 200);
 
-				setTimeout(function(){
-					skipvideo();
-				}, 5000);
-			</script>
+					function changeWallpaper(id){
+						document.getElementsByClassName("loading")[0].style.backgroundImage = `url(assets/images/art${id}.jpg)`;
+					}
 
-			<div class="back-form"></div>
-			<div class="account">
-				<div class="avatar">
-					<img src="assets/img/guest.png">
-				</div>
-				<div class="body">Добро пожаловать,<p><b>Гость</b>!</p></div>
-			</div>
-			<div class="author media-text-center"><b>Dmitry Vansovich</b>, 2018-2019</div>
-
-			<div class="skip"><button class="btn btn-sm btn-outline-light float-left" onclick="skipvideo();"><b>Пропустить</b></button></div>
-			<div class="tv">
-				<div class="screen" id="tv"></div>
-			</div>
+					var papers = setInterval(function(){
+						changeWallpaper(randomInteger(1,11));
+					}, 7000);
+				</script>
+			<div class="right"></div></div>
 		</div>
+	</div>
+
 	</div>
 
 	<!-- socket.io -->

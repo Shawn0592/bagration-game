@@ -7,6 +7,8 @@ let selected_state_movefrom;
 let spy = false;
 let spu_from;
 
+var game_time_m, game_time_s;
+
 let _sup1,_sup2,_sup3,_sup4,_sup5,_sup6,_sup7,_sup8,_sup9,_sup10,_sup11,_sup12 = false;
 
 let player_params = {
@@ -36,7 +38,7 @@ socket.on('connect', function(data){
 	// 		$('#startgame').css('display','none');
 	// 		$('#serverlist').css('display','none');
 	//      $('#spectator_game').css('display','none');
-	//		$('#video').css('display','none');
+	//		$('.loading').css('display','none');
 
 	// 		socket.emit('data', {
 	// 			command: 'CD003',
@@ -50,7 +52,7 @@ socket.on('connect', function(data){
 	$('#startgame').css('display','none');
 	$('#serverlist').css('display','none');
 	$('#spectator_game').css('display','none');
-	$('#video').css('display','block');
+	$('.loading').css('display','block');
 
 	socket.emit('data', {
 		command: 'CD003',
@@ -102,7 +104,12 @@ socket.on('game', function(data){
 		$('#startgame').css('display','none');
 		$('#serverlist').css('display','none');
 		$('#spectator_game').css('display','none');
-		$('#video').css('display','none');
+		$('.loading').css('display','none');
+
+		clearInterval(timer);
+
+		game_time_m = 10;
+		game_time_s = 0;
 
 		game_key = data.key;
 		if(data.player1 == this_player){
@@ -1329,14 +1336,91 @@ socket.on('game', function(data){
 			});
 		}
 
+		var game_timer = setInterval(function(){
+			if(game_time_m > 0 && game_time_s == 0){
+				game_time_m--;
+				game_time_s = 59;
+			} else if(game_time_m == 0 && game_time_s <= 0){
+				if(my_states_arr.length < enemy_states_arr.length){
+					// lose
+
+					var div = document.getElementById('loading-time');
+					document.getElementsByClassName('menu')[0].style.display = "none";
+					document.getElementsByClassName('loading')[0].style.opacity = "1";
+					document.getElementsByClassName('loading')[0].style.display = "block";
+
+					div.innerHTML = `Вы проиграли!`;
+
+					function changeWallpaper(id){
+						document.getElementsByClassName("loading")[0].style.backgroundImage = `url(assets/images/art${id}.jpg)`;
+					}
+
+					var papers = setInterval(function(){
+						changeWallpaper(randomInteger(1,11));
+					}, 7000);
+				} else if(my_states_arr.length > enemy_states_arr.length){
+					// win
+
+					var div = document.getElementById('loading-time');
+					document.getElementsByClassName('menu')[0].style.display = "none";
+					document.getElementsByClassName('loading')[0].style.opacity = "1";
+					document.getElementsByClassName('loading')[0].style.display = "block";
+
+					div.innerHTML = `Вы выиграли!`;
+
+					function changeWallpaper(id){
+						document.getElementsByClassName("loading")[0].style.backgroundImage = `url(assets/images/art${id}.jpg)`;
+					}
+
+					var papers = setInterval(function(){
+						changeWallpaper(randomInteger(1,11));
+					}, 7000);
+				} else if(my_states_arr.length == enemy_states_arr.length){
+					var div = document.getElementById('loading-time');
+					document.getElementsByClassName('menu')[0].style.display = "none";
+					document.getElementsByClassName('loading')[0].style.opacity = "1";
+					document.getElementsByClassName('loading')[0].style.display = "block";
+
+					div.innerHTML = `Ничья!`;
+
+					function changeWallpaper(id){
+						document.getElementsByClassName("loading")[0].style.backgroundImage = `url(assets/images/art${id}.jpg)`;
+					}
+
+					var papers = setInterval(function(){
+						changeWallpaper(randomInteger(1,11));
+					}, 7000);
+				}
+
+				$('#game').css('display', 'none');
+				clearInterval(game_timer);
+			} else {
+				game_time_s--;
+			}
+
+			if(game_time_m < 10){
+				if(game_time_s < 10){
+					document.getElementById('time-to-end').innerHTML = `0${game_time_m}:0${game_time_s}`;
+				} else {
+					document.getElementById('time-to-end').innerHTML = `0${game_time_m}:${game_time_s}`;
+				}
+			} else {
+				if(game_time_s > 9){
+					document.getElementById('time-to-end').innerHTML = `${game_time_m}:0${game_time_s}`;
+				} else {
+					document.getElementById('time-to-end').innerHTML = `${game_time_m}:${game_time_s}`;
+				}
+			}
+		}, 1000);
+
 		if(player == 1){
 			$('#player_country').text('Рейх');
 			player_country = 'Рейх';
-			$('#player_country_flag').attr('src','assets/img/germany_reich.png');
+			$('#player_country_flag').attr('src','assets/img/germany.svg');
 		} else if(player == 2){
 			$('#player_country').text('СССР');
 			player_country = 'СССР';
-			$('#player_country_flag').attr('src','assets/img/ussr.png');
+			$('#player_country_flag').attr('src','assets/img/ussr.svg');
 		}
 
 		socket.emit('spectate', {
@@ -1452,7 +1536,6 @@ function click(state){
 
 			selected_state = state;
 
-			console.log('Center: '+getCentroid(getPoints(state+'-raion')));
 			MAP.scale = 25;
 			map('plus');
 			document.getElementById(state+'-raion').style.opacity = '1';
@@ -1462,23 +1545,23 @@ function click(state){
 			$('.deleteArmy').css('display','none');
 
 			$('.right-panel').css('display','block');
-			$('.right-panel .buttons').css('display','none');
+			//$('.right-panel .buttons').css('display','none');
 
 			for(var i = 0; i < GLOBAL_MAP.length; i++){
 				if(GLOBAL_MAP[i].id == state+"-raion"){
-					$('#state_terr').text(GLOBAL_MAP[i].name);
-					if(GLOBAL_MAP[i].region == 'brestskaia-voblasts') $('#state_terr_vobl').text('Брестская');
-					if(GLOBAL_MAP[i].region == 'vitsebskaia-voblasts') $('#state_terr_vobl').text('Витебская');
-					if(GLOBAL_MAP[i].region == 'homelskaia-voblasts') $('#state_terr_vobl').text('Гомельская');
-					if(GLOBAL_MAP[i].region == 'hrodnenskaia-voblasts') $('#state_terr_vobl').text('Гродненская');
-					if(GLOBAL_MAP[i].region == 'minskaia-voblasts') $('#state_terr_vobl').text('Минская');
-					if(GLOBAL_MAP[i].region == 'mahiliouskaia-voblasts') $('#state_terr_vobl').text('Могилёвская');
+					$('#state_terr').text('> '+GLOBAL_MAP[i].name);
+					if(GLOBAL_MAP[i].region == 'brestskaia-voblasts') $('#state_terr_vobl').text('> Брестская');
+					if(GLOBAL_MAP[i].region == 'vitsebskaia-voblasts') $('#state_terr_vobl').text('> Витебская');
+					if(GLOBAL_MAP[i].region == 'homelskaia-voblasts') $('#state_terr_vobl').text('> Гомельская');
+					if(GLOBAL_MAP[i].region == 'hrodnenskaia-voblasts') $('#state_terr_vobl').text('> Гродненская');
+					if(GLOBAL_MAP[i].region == 'minskaia-voblasts') $('#state_terr_vobl').text('> Минская');
+					if(GLOBAL_MAP[i].region == 'mahiliouskaia-voblasts') $('#state_terr_vobl').text('> Могилёвская');
 				}
 			}
 
 			if(player_country == 'СССР'){
 				$('#terr_player_country').text('Рейх');
-				$('#terr_player_country_flag').attr('src','assets/img/germany_reich.png');
+				$('#terr_player_country_flag').attr('src','assets/img/germany.svg');
 
 				let terrs_text = null;
 				if(enemy_states_arr.length == 1) terrs_text = 'территория';
@@ -1488,7 +1571,7 @@ function click(state){
 				document.getElementById('terr_state_name').innerHTML = enemy_states_arr.length+' '+terrs_text;	
 			} else {
 				$('#terr_player_country').text('СССР');
-				$('#terr_player_country_flag').attr('src','assets/img/ussr.png');
+				$('#terr_player_country_flag').attr('src','assets/img/ussr.svg');
 
 				let terrs_text = null;
 				if(enemy_states_arr.length == 1) terrs_text = 'территория';
@@ -1499,9 +1582,9 @@ function click(state){
 			}
 
 			if(player_country == 'Рейх'){
-				$('#terr_owner').text('Территория СССР');
+				$('#terr_owner').text('Армия СССР');
 			} else {
-				$('#terr_owner').text('Территория Рейха');
+				$('#terr_owner').text('Армия Рейха');
 			}
 
 			for(let i = 0; i < my_states_arr.length; i++){
@@ -1509,7 +1592,7 @@ function click(state){
 					$('#state_army').text(numberWithSpaces(my_states_arr[i].army+'Т'));
 					if(my_states_arr[i].div){
 						$('#right-panel-body').css('display','block');
-						$('#state_army_name').text(my_states_arr[i].divName);
+						$('#state_army_name').text('> '+my_states_arr[i].divName);
 					} else {
 						$('#right-panel-body').css('display','none');
 					}
@@ -1521,7 +1604,7 @@ function click(state){
 					$('#state_army').text(numberWithSpaces(enemy_states_arr[i].army+'Т'));
 					if(enemy_states_arr[i].div){
 						$('#right-panel-body').css('display','block');
-						$('#state_army_name').text(enemy_states_arr[i].divName);
+						$('#state_army_name').text('> '+enemy_states_arr[i].divName);
 					} else {
 						$('#right-panel-body').css('display','none');
 					}
@@ -1533,14 +1616,14 @@ function click(state){
 					$('.right-panel .buttons').css('display','flex');
 
 					if(player_country == 'Рейх'){
-						$('#terr_owner').text('Территория Рейха');
+						$('#terr_owner').text('Армия Рейха');
 					} else {
-						$('#terr_owner').text('Территория СССР');
+						$('#terr_owner').text('Армия СССР');
 					}
 
 					if(player_country == 'СССР'){
 						$('#terr_player_country').text('СССР');
-						$('#terr_player_country_flag').attr('src','assets/img/ussr.png');
+						$('#terr_player_country_flag').attr('src','assets/img/ussr.svg');
 
 						let terrs_text = null;
 						if(my_states_arr.length == 1) terrs_text = 'территория';
@@ -1550,7 +1633,7 @@ function click(state){
 						document.getElementById('terr_state_name').innerHTML = my_states_arr.length+' '+terrs_text;
 					} else {
 						$('#terr_player_country').text('Рейх');
-						$('#terr_player_country_flag').attr('src','assets/img/germany_reich.png');
+						$('#terr_player_country_flag').attr('src','assets/img/germany.svg');
 
 						let terrs_text = null;
 						if(my_states_arr.length == 1) terrs_text = 'территория';
@@ -1568,6 +1651,9 @@ function click(state){
 			if(document.getElementById(state+'-raion').style.opacity != '0.7') return;
 
 			$('.move').css('display','block');
+			$('.right-panel').css('display','none');
+			$('.peoples').css('display','none');
+			$('.logs').css('display','none');
 
 			selected_state_move = state;
 
@@ -1814,6 +1900,9 @@ function deleteArmy(){
 function move_ok(){
 	document.getElementById('border').innerHTML = ` `;
 
+	$('.peoples').css('display','block');
+	$('.logs').css('display','block');
+
 	let movefrom_army = document.getElementsByClassName('moveBlock_range')[0].value, moveto_army;
 	let moveto_mystate = false;
 	let movefrom_divName, movefrom_div;
@@ -2028,6 +2117,9 @@ function move_cancel(){
 	$('.right-panel').css('display','none');
 	$('.right-panel .buttons').css('display','none');
 
+	$('.peoples').css('display','block');
+	$('.logs').css('display','block');
+
 	let states = document.getElementsByTagName('polygon');
 
 	for(let i = 0; i < states.length; i++){
@@ -2224,7 +2316,21 @@ function randomInteger(min, max) {
 // }, 120000);
 
 function createserver(){
-	document.getElementById('createserverbutton').innerHTML = '<b class="text-primary" style="font-size:26px;">Ожидание игрока</b>';
+	var div = document.getElementById('loading-time');
+	document.getElementsByClassName('menu')[0].style.display = "none";
+	document.getElementsByClassName('loading')[0].style.opacity = "1";
+	document.getElementsByClassName('loading')[0].style.display = "block";
+
+	div.innerHTML = `Ожидание соперника`;
+
+	function changeWallpaper(id){
+		document.getElementsByClassName("loading")[0].style.backgroundImage = `url(assets/images/art${id}.jpg)`;
+	}
+
+	var papers = setInterval(function(){
+		changeWallpaper(randomInteger(1,11));
+	}, 7000);
+
 	$('#startgame_tomenu').css('display','none');
 
 	socket.emit('data', {
@@ -2238,7 +2344,7 @@ function to_createserver(){
 	$('#startgame').css('display','block');
 	$('#serverlist').css('display','none');
 	$('#spectator_game').css('display','none');
-	$('#video').css('display','none');
+	$('.loading').css('display','none');
 }
 
 function to_serverlist(){
@@ -2247,7 +2353,7 @@ function to_serverlist(){
 	$('#startgame').css('display','none');
 	$('#serverlist').css('display','block');
 	$('#spectator_game').css('display','none');
-	$('#video').css('display','none');
+	$('.loading').css('display','none');
 
 	socket.emit('server-list', {
 		command: 'CS002'
@@ -2266,14 +2372,14 @@ function to_menu(){
 		$('#startgame').css('display','none');
 		$('#serverlist').css('display','block');
 		$('#spectator_game').css('display','none');
-		$('#video').css('display','none');
+		$('.loading').css('display','none');
 	} else {
 		$('#game').css('display','none');
 		$('#menu').css('display','block');
 		$('#startgame').css('display','none');
 		$('#serverlist').css('display','none');
 		$('#spectator_game').css('display','none');
-		$('#video').css('display','none');
+		$('.loading').css('display','none');
 	}
 
 	spectating = false;
@@ -2315,66 +2421,16 @@ socket.on('error', function(data){
 
 socket.on('server-list', function(data){
 	if(data.command == 'SC001' && data.games.length){
-		var serverlist_div = document.getElementById('server-list');
+		var serverlist_div = document.getElementById('servers');
 		var html = '';
 		var games = data.games;
 
 		for(var i = 0; i < games.length; i++){
 			if(games[i].closed == false){
 				if(data.games[i].players == 1){
-					html = html +  `<div class="col-md-4 block">
-										<div class="block-header clearfix">
-											`+data.games[i].creator.first_name+` `+data.games[i].creator.last_name+`
-											<div class="watch-button float-right" onclick="serverlist_connect(`+i+`);"><i class="fas fa-play"></i></div>
-										</div>
-										<div class="block-body">
-											<p>Статус: <b class="text-success">открыт</b></p>
-											<p>Сложность: <b class="text-success">лёгкая</b></p>
-											<p>Игроков: <b class="text-primary">1/2</b></p>
-											<p>Пароль: <b class="text-success">нет</b></p>
-										</div>
-									</div>`;
+					html = html +  `<div class="server opened" onclick="serverlist_connect(`+i+`);"><i class="fas fa-play"></i></div>`;
 				} else {
-					html = html +  `<div class="col-md-4 block">
-										<div class="block-header clearfix">
-											`+data.games[i].creator.first_name+` `+data.games[i].creator.last_name+`
-											<div class="watch-button float-right" onclick="serverlist_watch(`+i+`);"><i class="fas fa-eye"></i></div>
-										</div>
-										<div class="block-body">
-											<p>Статус: <b class="text-danger">закрыт</b></p>
-											<p>Сложность: <b class="text-success">лёгкая</b></p>
-											<p>Игроков: <b class="text-primary">2/2</b></p>
-											<p>Пароль: <b class="text-success">нет</b></p>
-										</div>
-									</div>`;
-				}
-			} else {
-				if(data.games[i].players == 1){
-					html = html +  `<div class="col-md-4 block">
-										<div class="block-header clearfix">
-											`+data.games[i].creator.first_name+` `+data.games[i].creator.last_name+`
-											<div class="watch-button float-right" onclick="serverlist_connect_closed(`+i+`);"><i class="fas fa-play"></i></div>
-										</div>
-										<div class="block-body">
-											<p>Статус: <b class="text-success">открыт</b></p>
-											<p>Сложность: <b class="text-danger">невозможная</b></p>
-											<p>Игроков: <b class="text-primary">1/2</b></p>
-											<p>Пароль: <b class="text-danger">есть</b></p>
-										</div>
-									</div>`;
-				} else {
-					html = html +  `<div class="col-md-4 block">
-										<div class="block-header clearfix">
-											`+data.games[i].creator.first_name+` `+data.games[i].creator.last_name+`
-											<div class="watch-button float-right" onclick="serverlist_watch(`+i+`);"><i class="fas fa-eye"></i></div>
-										</div>
-										<div class="block-body">
-											<p>Статус: <b class="text-danger">закрыт</b></p>
-											<p>Сложность: <b class="text-danger">невозможная</b></p>
-											<p>Игроков: <b class="text-primary">2/2</b></p>
-											<p>Пароль: <b class="text-danger">есть</b></p>
-										</div>
-									</div>`;
+					html = html +  `<div class="server closed" onclick="serverlist_watch(`+i+`);"><i class="fas fa-times"></i></div>`;
 				}
 			}
 		}
@@ -2390,11 +2446,11 @@ function updateArmy(){
 	var my_src, enemy_src;
 
 	if(player == 1){ 
-		my_src = 'assets/img/germany_reich.png';
-		enemy_src = 'assets/img/ussr.png'; 
+		my_src = 'assets/img/germany.svg';
+		enemy_src = 'assets/img/ussr.svg'; 
 	} else { 
-		my_src = 'assets/img/ussr.png';
-		enemy_src = 'assets/img/germany_reich.png'; 
+		my_src = 'assets/img/ussr.svg';
+		enemy_src = 'assets/img/germany.svg'; 
 	}
 
 	for(var i = 0; i < my_states_arr.length; i++){
@@ -2581,11 +2637,11 @@ function getSupport(country, army, time){
 			var my_src, enemy_src;
 
 			if(player == 1){ 
-				my_src = 'assets/img/germany_reich.png';
-				enemy_src = 'assets/img/ussr.png'; 
+				my_src = 'assets/img/germany.svg';
+				enemy_src = 'assets/img/ussr.svg'; 
 			} else { 
-				my_src = 'assets/img/ussr.png';
-				enemy_src = 'assets/img/germany_reich.png'; 
+				my_src = 'assets/img/ussr.svg';
+				enemy_src = 'assets/img/germany.svg'; 
 			}
 
 			for(var i = 0; i < my_states_arr.length; i++){
@@ -2628,11 +2684,11 @@ function setRandomArmy(army){
 	var my_src, enemy_src;
 
 	if(player == 1){ 
-		my_src = 'assets/img/germany_reich.png';
-		enemy_src = 'assets/img/ussr.png'; 
+		my_src = 'assets/img/germany.svg';
+		enemy_src = 'assets/img/ussr.svg'; 
 	} else { 
-		my_src = 'assets/img/ussr.png';
-		enemy_src = 'assets/img/germany_reich.png'; 
+		my_src = 'assets/img/ussr.svg';
+		enemy_src = 'assets/img/germany.svg'; 
 	}
 
 	for(var i = 0; i < my_states_arr.length; i++){
@@ -2953,11 +3009,11 @@ function stopSpy(time){
 
 var MAP = {
 	"scale": 10,
-	"scale_speed": .5,
+	"scale_speed": 2,
 
 	"top": 50,
 	"left": 50,
-	"move_speed": 5,
+	"move_speed": 7,
 
 	"max": 1000,
 	"min": -1000
@@ -3048,3 +3104,9 @@ var getPoints = element => {
 
 	return points;
 }
+
+
+// var armies = document.getElementsByClassName('army');
+// for(var a in armies){
+// 	armies[a].style.opacity = "1"
+// }
