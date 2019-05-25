@@ -1349,7 +1349,7 @@ socket.on('game', function(data){
 					document.getElementsByClassName('loading')[0].style.opacity = "1";
 					document.getElementsByClassName('loading')[0].style.display = "block";
 
-					div.innerHTML = `Вы проиграли!`;
+					div.innerHTML = `Вы проиграли! Очки: ${my_states_arr.length}`;
 
 					function changeWallpaper(id){
 						document.getElementsByClassName("loading")[0].style.backgroundImage = `url(assets/images/art${id}.jpg)`;
@@ -1366,7 +1366,7 @@ socket.on('game', function(data){
 					document.getElementsByClassName('loading')[0].style.opacity = "1";
 					document.getElementsByClassName('loading')[0].style.display = "block";
 
-					div.innerHTML = `Вы выиграли!`;
+					div.innerHTML = `Вы выиграли! Очки: ${my_states_arr.length}`;
 
 					function changeWallpaper(id){
 						document.getElementsByClassName("loading")[0].style.backgroundImage = `url(assets/images/art${id}.jpg)`;
@@ -2783,7 +2783,7 @@ function popup(action){
 		$('.popup').css('display','none');
 	} else if(action == 'next'){
 		popup('close');
-		setTimer(my_states_arr.length);
+		setTimer(my_states_arr.length/2);
 	}
 }
 
