@@ -7,6 +7,12 @@ let selected_state_movefrom;
 let spy = false;
 let spu_from;
 
+function randomInteger(min, max) {
+    let rand = min + Math.random() * (max + 1 - min);
+    rand = Math.floor(rand);
+    return rand;
+}
+
 var game_time_m, game_time_s;
 
 let _sup1,_sup2,_sup3,_sup4,_sup5,_sup6,_sup7,_sup8,_sup9,_sup10,_sup11,_sup12 = false;
@@ -106,7 +112,7 @@ socket.on('game', function(data){
 		$('#spectator_game').css('display','none');
 		$('.loading').css('display','none');
 
-		clearInterval(timer);
+		clearInterval(r);
 
 		game_time_m = 10;
 		game_time_s = 0;
@@ -2285,12 +2291,6 @@ function tehs_buy(item){
 	}
 }
 
-function randomInteger(min, max) {
-    let rand = min + Math.random() * (max + 1 - min);
-    rand = Math.floor(rand);
-    return rand;
-}
-
 // let randomY = randomInteger(1,200);
 // 	randomY1 = randomInteger(-450,-100);
 
@@ -2999,12 +2999,12 @@ let spy_stopped = true;
 
 setTimeout(function(){
 	spy_stopped = false;
-}, 420000);
+}, 120000);
 
 function stopSpy(time){
 	setTimeout(function(){
 		spy_stopped = false;
-	}, time*1000);
+	}, 120000);
 }
 
 var MAP = {
