@@ -112,7 +112,7 @@ socket.on('game', function(data){
 		$('#spectator_game').css('display','none');
 		$('.loading').css('display','none');
 
-		//clearInterval(r);
+		clearInterval(timer);
 
 		game_time_m = 10;
 		game_time_s = 0;
